@@ -69,7 +69,7 @@ function Project({ project }: { project: Project }) {
                             href={project.github_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-between px-6 py-2 border border-gray-600 text-gray-600 font-semibold rounded-full hover:bg-blue-50 transition-colors duration-300 w-[190px]"
+                            className="flex items-center justify-between px-6 pb-2 border border-gray-600 text-gray-600 font-semibold rounded-full hover:bg-blue-50 transition-colors duration-300 w-[190px]"
                         >
                             <p>View on GitHub</p>
                             <ExternalLink className="size-5" />
@@ -108,6 +108,10 @@ function Hero() {
             <a
                 href="#portfolio"
                 className="mt-8 px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300"
+                onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                }}
             >
                 View Portfolio
             </a>

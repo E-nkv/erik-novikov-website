@@ -15,7 +15,7 @@ export default function Navbar() {
         <nav className="bg-white py-2 px-3 sticky w-full z-10 top-0 shadow-md lg:px-10 " id="top">
             <div className="flex justify-between items-center">
                 <LogoE />
-                <div className="hidden md:flex space-x-6">
+                <div className="hidden sm:flex space-x-6">
                     <Link href="#about" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         About
                     </Link>
@@ -34,14 +34,14 @@ export default function Navbar() {
                         GitHub
                     </a>
                 </div>
-                <div className="md:hidden flex items-center">
+                <div className="sm:hidden flex items-center">
                     <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
                         <Menu />
                     </button>
                 </div>
             </div>
             <div
-                className={`md:hidden fixed inset-y-0 right-0 bg-gray-200 bg-opacity-90 z-20 w-[70vw] transform transition-transform duration-500 ease-in-out flex justify-center items-center ${
+                className={`sm:hidden fixed inset-y-0 right-0 bg-gray-200 bg-opacity-90 z-20 w-[70vw] transform transition-transform duration-500 ease-in-out flex justify-center items-center ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
