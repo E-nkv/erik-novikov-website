@@ -26,7 +26,7 @@ export default function Navbar() {
                         Contact
                     </Link>
                     <a
-                        href="https://github.com/erik-novikov"
+                        href="https://github.com/E-nkv"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover"
