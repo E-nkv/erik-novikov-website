@@ -12,12 +12,15 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-white py-2 px-3 sticky w-full z-10 top-0 shadow-md lg:px-10 " id="top">
+        <nav id="top" className="bg-white py-2 px-3 sticky w-full z-10 top-0 shadow-md lg:px-10 ">
             <div className="flex justify-between items-center">
                 <LogoE />
                 <div className="hidden sm:flex space-x-6">
                     <Link href="#about" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         About
+                    </Link>
+                    <Link href="#portfolio" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
+                        Portfolio
                     </Link>
                     {/* <Link href="#resume" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         Resume

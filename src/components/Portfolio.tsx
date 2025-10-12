@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import Link from "next/link"
 import { JSX } from "react"
 import Image from "next/image"
@@ -34,9 +34,15 @@ function Project({ project }: { project: Project }) {
         <div className="bg-white shadow-2xl rounded-lg py-3">
             <h2 className="text-2xl font-semibold mb-2 text-center px-3">{project.title}</h2>
             <div className="relative md:h-[400px] md:w-[670px] mx-auto">
-                <Image src={project.img_url} alt={`Image of ${project.title}`} className="w-full h-full object-fit rounded-md " width={1080} height={720}/>
+                <Image
+                    src={project.img_url}
+                    alt={`Image of ${project.title}`}
+                    className="w-full h-full object-fit rounded-md "
+                    width={1080}
+                    height={720}
+                />
             </div>
-            
+
             <div className="pt-6 px-6 flex flex-col flex-grow">
                 <p className="text-gray-700 mb-4">
                     <span className="font-semibold">What it is:</span> {project.description}
@@ -57,7 +63,7 @@ function Project({ project }: { project: Project }) {
                             href={project.github_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-between px-6 py-2 border border-gray-600 text-gray-600 font-semibold rounded-full hover:bg-blue-50 transition-colors duration-300 w-[190px]"
+                            className="flex items-center justify-between px-6 py-2 border border-gray-600 text-gray-600 font-semibold rounded-full hover:bg-blue-100 hover:border-gray-800 hover:text-gray-800 transition-colors duration-300 w-[190px]"
                         >
                             <p>View on GitHub</p>
                             <ExternalLink className="size-5" />
@@ -71,7 +77,9 @@ function Project({ project }: { project: Project }) {
 export function Portfolio() {
     return (
         <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold text-center mb-12">What I've built</h1>
+            <Link href="/#portfolio">
+                <h1 className="text-4xl font-bold text-center mb-12">What I've built</h1>
+            </Link>
             <div className="max-w-3xl mx-auto">
                 <Project project={projects[0]} />
                 <Project project={projects[0]} />

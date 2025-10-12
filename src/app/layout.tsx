@@ -3,7 +3,6 @@ import { Lato } from "next/font/google"
 import "./globals.css"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import SmoothScrollAnchor from "../components/SmoothScrollAnchor"
 
 const lato = Lato({
     weight: ["400", "700"],
@@ -23,12 +22,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${lato.variable} scroll-smooth`}>
-            <body >
+            <body>
                 <Navbar />
                 {children}
-                
                 <Footer />
-                <SmoothScrollAnchor />
             </body>
         </html>
     )

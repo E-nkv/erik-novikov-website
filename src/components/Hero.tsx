@@ -1,9 +1,9 @@
-'use client'
-import Link from "next/link";
+"use client"
+import Link from "next/link"
 
 export function Hero() {
     return (
-        <section className="flex flex-col items-center justify-center min-h-[90vh] text-center px-4">
+        <section id="top" className="flex flex-col items-center justify-center min-h-[90vh] text-center px-4">
             <div className="max-w-4xl">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight whitespace-nowrap">
                     Hi <span className="waving-hand inline-block">👋</span>! My name is
