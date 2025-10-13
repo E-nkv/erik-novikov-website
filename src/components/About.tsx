@@ -30,6 +30,7 @@ import {
     GithubActionsIcon,
     ViteIcon,
     DrizzleIcon,
+    GithubIcon,
 } from "./icons"
 import Link from "next/link"
 
@@ -152,7 +153,17 @@ function CategoryList() {
                     </li>
                 </ul>
             </Category>
-            <Category name="Other"></Category>
+            <Category name="Other">
+                <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
+                    <li className="flex gap-2 items-center">
+                        <span className="font-semibold whitespace-nowrap">Version Control and CI/CD: </span>
+                        <div className="flex items-center gap-2">
+                            <GitIcon />
+                            <GithubIcon />
+                        </div>
+                    </li>
+                </ul>
+            </Category>
             <Category name="Soft Skills"></Category>
         </div>
     )
