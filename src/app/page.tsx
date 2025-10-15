@@ -16,6 +16,7 @@ export default function Home() {
             <Hero />
             <Portfolio />
             <About />
+
             <ScrollHashUpdater sectionIds={sectionsToTrack} />
         </main>
     )

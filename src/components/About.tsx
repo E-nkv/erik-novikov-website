@@ -80,76 +80,76 @@ function CategoryList() {
             <Category name="Programming Languages">
                 <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
                     <li className="ul-li-icon">
-                        Go <GoIcon className="size-5 inline-block ml-1" />
+                        Go <GoIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Typescript <TypescriptIcon className="size-5 inline-block ml-1" />
+                        Typescript <TypescriptIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Java <TypescriptIcon className="size-5 inline-block ml-1" />
+                        Java <JavaIcon className="size-5 inline-block" />
                     </li>
                 </ul>
             </Category>
             <Category name="Frontend">
                 <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
                     <li className="ul-li-icon">
-                        HTML5 <HTML5Icon className="size-5 inline-block ml-1" />
+                        HTML5 <HTML5Icon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        CSS3 <CSS3Icon className="size-5 inline-block ml-1" />
+                        CSS3 <CSS3Icon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Javascript <JSIcon className="size-5 inline-block ml-1" />
+                        Javascript <JSIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        React <ReactIcon className="size-5 inline-block ml-1" />
+                        React <ReactIcon className="size-5 inline-block filter brightness-75" />
                     </li>
                     <li className="ul-li-icon">
-                        Tailwind <TailwindcssIcon className="size-5 inline-block ml-1" />
+                        Tailwind <TailwindcssIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Vite <ViteIcon className="size-5 inline-block ml-1" />
+                        Vite <ViteIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Tanstack <TanstackIcon className="size-5 inline-block ml-1" />
+                        Tanstack <TanstackIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Shadcn <ShadcnIcon className="size-5 inline-block ml-1" />
+                        Shadcn <ShadcnIcon className="size-5 inline-block" />
                     </li>
                 </ul>
             </Category>
             <Category name="Backend">
                 <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
                     <li className="ul-li-icon">
-                        Go <GoIcon className="size-5 inline-block ml-1" />
+                        Go <GoIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Node <NodejsIcon className="size-5 inline-block ml-1" />
+                        <NodejsIcon className="h-6 w-16 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Express <ExpressIcon className="size-5 inline-block ml-1" />
+                        Express <ExpressIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Nest <NestIcon className="size-5 inline-block ml-1" />
+                        Nest <NestIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        DrizzleORM <DrizzleIcon className="size-5 inline-block ml-1" />
+                        DrizzleORM <DrizzleIcon className="size-5 inline-block" />
                     </li>
                 </ul>
             </Category>
             <Category name="Databases">
                 <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
                     <li className="ul-li-icon">
-                        Postgres <PostgresqlIcon className="size-5 inline-block ml-1" />
+                        Postgres <PostgresqlIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Mysql <MysqlIcon className="size-5 inline-block ml-1" />
+                        Mysql <MysqlIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Mongodb <MongodbIcon className="size-5 inline-block ml-1" />
+                        Mongodb <MongodbIcon className="size-5 inline-block" />
                     </li>
                     <li className="ul-li-icon">
-                        Redis <RedisIcon className="size-5 inline-block ml-1" />
+                        Redis <RedisIcon className="size-5 inline-block" />
                     </li>
                 </ul>
             </Category>
@@ -170,7 +170,7 @@ function CategoryList() {
 }
 function Category({ children, name }: { children?: React.ReactNode; name: string }) {
     return (
-        <div className="w-[min(400px,80vw)] shadow-xl flex flex-col">
+        <div className="w-[min(400px,80vw)] shadow-xl flex flex-col hover:scale-110 transition-transform duration-500 border border-gray-300 rounded-lg">
             <h3 className="text-md font-semibold text-white bg-gray-900 rounded-t-lg text-center px-2 py-[2px]">{name}</h3>
             <div className="px-3 py-5 mx-auto h-full flex justify-center items-center ">{children}</div>
         </div>

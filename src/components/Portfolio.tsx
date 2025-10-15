@@ -78,9 +78,9 @@ export function Portfolio() {
     return (
         <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8">
             <Link href="/#portfolio">
-                <h1 className="text-4xl font-bold text-center mb-12">What I've built</h1>
+                <h1 className="text-5xl font-bold text-center mb-12">What I've built</h1>
             </Link>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto flex flex-col gap-10">
                 <Project project={projects[0]} />
                 <Project project={projects[0]} />
             </div>
