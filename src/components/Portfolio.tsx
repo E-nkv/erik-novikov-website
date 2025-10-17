@@ -43,7 +43,7 @@ function Project({ project }: { project: Project }) {
                 />
             </div>
 
-            <div className="pt-6 px-6 flex flex-col flex-grow">
+            <div className="pt-6 px-6 flex flex-col flex-grow text-md sm:text-lg">
                 <p className="text-gray-700 mb-4">
                     <span className="font-semibold">What it is:</span> {project.description}
                 </p>
@@ -51,7 +51,7 @@ function Project({ project }: { project: Project }) {
                     <span className="font-semibold">Technologies used:</span>
                     <div className="flex flex-wrap gap-3 mb-4">
                         {project.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="px-3 py-1 bg-blue-100 text-blue-900 text-sm font-medium rounded-full">
+                            <span key={skillIndex} className="px-3 py-1 bg-blue-50 text-gray-8s00 font-semibold text-sm rounded-full">
                                 {skill.name} {skill.icon}
                             </span>
                         ))}
@@ -63,9 +63,9 @@ function Project({ project }: { project: Project }) {
                             href={project.github_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-between px-6 py-2 border border-gray-600 text-gray-600 font-semibold rounded-full hover:bg-blue-100 hover:border-gray-800 hover:text-gray-800 transition-colors duration-300 w-[190px]"
+                            className="flex items-center justify-between px-6 py-2 border border-gray-600 text-gray-600 font-semibold rounded-full hover:bg-blue-100 hover:border-gray-800 hover:text-gray-800 transition-colors duration-300 w-[190px] sm:w-[205px]"
                         >
-                            <p>View on GitHub</p>
+                            <p className="whitespace-nowrap">View on GitHub</p>
                             <ExternalLink className="size-5" />
                         </Link>
                     )}
@@ -78,7 +78,7 @@ export function Portfolio() {
     return (
         <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8">
             <Link href="/#portfolio">
-                <h1 className="text-5xl font-bold text-center mb-12">What I've built</h1>
+                <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-8">What I've built</h1>
             </Link>
             <div className="max-w-3xl mx-auto flex flex-col gap-10">
                 <Project project={projects[0]} />

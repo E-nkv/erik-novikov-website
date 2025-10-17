@@ -40,7 +40,10 @@ export function About() {
             {/* About me text */}
             <div className="max-w-[70ch] mx-auto">
                 <Link href="/#about" scroll={true}>
-                    <h1 id="about" className="text-4xl font-bold text-center mb-12">
+                    <h1
+                        id="about"
+                        className="text-3xl sm:text-5xl lg:text-6xl text-center font-bold leading-tight whitespace-nowraptext-center mb-12"
+                    >
                         About Me
                     </h1>
                 </Link>
@@ -65,7 +68,7 @@ export function About() {
             </div>
             {/* Skills */}
             <div className="">
-                <h2 className="text-3xl font-bold text-center mt-16 mb-10">My skills</h2>
+                <h2 className="text-4xl sm:text-5xl font-bold text-center mt-16 mb-10">My skills</h2>
                 <div className="flex justify-center">
                     <CategoryList />
                 </div>
@@ -76,18 +79,19 @@ export function About() {
 
 function CategoryList() {
     return (
-        <div className="flex flex-col gap-x-7 gap-y-10 md:flex-row justify-center max-w-[70%]  flex-wrap">
+        <div className="flex flex-col gap-x-7 gap-y-10 md:flex-row justify-center sm:max-w-[70%] max-w-[85%] flex-wrap">
             <Category name="Programming Languages">
                 <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
                     <li className="ul-li-icon">
                         Go <GoIcon className="size-5 inline-block" />
                     </li>
+
                     <li className="ul-li-icon">
                         Typescript <TypescriptIcon className="size-5 inline-block" />
                     </li>
-                    <li className="ul-li-icon">
+                    {/* <li className="ul-li-icon">
                         Java <JavaIcon className="size-5 inline-block" />
-                    </li>
+                    </li> */}
                 </ul>
             </Category>
             <Category name="Frontend">
@@ -154,13 +158,17 @@ function CategoryList() {
                 </ul>
             </Category>
             <Category name="Other">
-                <ul className="flex flex-wrap gap-2 px-5 items-center justify-center">
+                <ul className="flex flex-col gap-2 px-5 items-center">
                     <li className="flex gap-2 items-center">
-                        <span className="font-semibold whitespace-nowrap">Version Control and CI/CD: </span>
+                        <span className="font-semibold whitespace-nowrap">VC and CI/CD: </span>
                         <div className="flex items-center gap-2">
-                            <GitIcon />
-                            <GithubIcon />
+                            <GitIcon className="size-6" />
+                            <GithubIcon className="size-6" />
                         </div>
+                    </li>
+                    <li className="flex gap-2 items-center">
+                        <span className="font-semibold whitespace-nowrap">Containerization: </span>
+                        <DockerIcon className="size-6  inline-block" />
                     </li>
                 </ul>
             </Category>
