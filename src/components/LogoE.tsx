@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { SmoothLink } from "./SmoothLink"
 
 export function LogoE({ className }: { className?: string }) {
     return (
-        <Link
+        <SmoothLink
             className={cn(
                 "size-10 relative flex items-center justify-center text-xl font-bold transition-colors duration-300 ease-in-out hover:bg-blue-400 select-none cursor-pointer",
                 className
@@ -15,6 +15,6 @@ export function LogoE({ className }: { className?: string }) {
             href="/#top"
         >
             E
-        </Link>
+        </SmoothLink>
     )
 }

@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { JSX } from "react"
 import Image from "next/image"
+import { SmoothLink } from "./SmoothLink"
 
 const projects: Project[] = [
     {
@@ -51,7 +52,10 @@ function Project({ project }: { project: Project }) {
                     <span className="font-semibold">Technologies used:</span>
                     <div className="flex flex-wrap gap-3 mb-4">
                         {project.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="px-3 py-1 bg-blue-50 text-gray-8s00 font-semibold text-sm rounded-full">
+                            <span
+                                key={skillIndex}
+                                className="px-3 py-1 bg-blue-50 text-gray-800 shadow-lg font-semibold text-sm rounded-full"
+                            >
                                 {skill.name} {skill.icon}
                             </span>
                         ))}
@@ -77,9 +81,9 @@ function Project({ project }: { project: Project }) {
 export function Portfolio() {
     return (
         <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8">
-            <Link href="/#portfolio">
+            <SmoothLink href="/#portfolio">
                 <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-8">What I've built</h1>
-            </Link>
+            </SmoothLink>
             <div className="max-w-3xl mx-auto flex flex-col gap-10">
                 <Project project={projects[0]} />
                 <Project project={projects[0]} />

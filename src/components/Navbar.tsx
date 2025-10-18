@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { LogoE } from "./LogoE"
+import { SmoothLink } from "./SmoothLink"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -13,21 +14,21 @@ export default function Navbar() {
 
     return (
         <nav id="top" className="bg-white py-2 sticky w-full z-10 top-0 shadow-md">
-            <div className="flex justify-between items-center px-3 lg:px-10">
+            <div className="flex justify-between items-center px-3 ">
                 <LogoE />
                 <div className="hidden sm:flex space-x-6">
-                    <Link href="#about" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
+                    <SmoothLink href="/#about" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         About
-                    </Link>
-                    <Link href="#portfolio" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
+                    </SmoothLink>
+                    <SmoothLink href="/#portfolio" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         Portfolio
-                    </Link>
+                    </SmoothLink>
                     {/* <Link href="#resume" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         Resume
                     </Link> */}
-                    <Link href="#contact" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
+                    <SmoothLink href="/#contact" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         Contact
-                    </Link>
+                    </SmoothLink>
                     <a
                         href="https://github.com/E-nkv"
                         target="_blank"

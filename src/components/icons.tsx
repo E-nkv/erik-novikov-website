@@ -29,6 +29,9 @@ export function CSS3Icon({ className }: { className?: string }) {
 export function ReactIcon({ className }: { className?: string }) {
     return <img src="/react.svg" className={`${className}`}></img>
 }
+export function AWSIcon({ className }: { className?: string }) {
+    return <img src="/aws.svg" className={`${className}`}></img>
+}
 
 export function TailwindcssIcon({ className }: { className?: string }) {
     return <img src="/tailwind.svg" className={`${className}`}></img>
