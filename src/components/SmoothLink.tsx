@@ -11,11 +11,13 @@ export function SmoothLink({
     children,
     className,
     style,
+    onClick,
 }: {
     href: string
     children: React.ReactNode
     className?: string
     style?: React.CSSProperties
+    onClick?: () => void
 }) {
     return (
         <Link
@@ -23,6 +25,9 @@ export function SmoothLink({
             href={href}
             onClick={(e) => {
                 e.preventDefault()
+                if (onClick) {
+                    onClick()
+                }
                 const elementID = getIdFromHref(href)
                 if (elementID === "top") {
                     window.scrollTo({ top: 0, behavior: "smooth" })

@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { LogoE } from "./LogoE"
 import { SmoothLink } from "./SmoothLink"
+import { ArrowRight, ExternalLink, Menu, X } from "lucide-react"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -45,42 +46,48 @@ export default function Navbar() {
                 </div>
             </div>
             <div
-                className={`sm:hidden fixed inset-y-0 right-0 bg-gray-200 bg-opacity-90 z-20 w-full max-w-xs transform transition-transform duration-500 ease-in-out flex justify-center items-center ${
+                className={`sm:hidden fixed inset-y-0 right-0 bg-gray-100 bg-opacity-90 z-20 w-full transform transition-transform duration-500 ease-in-out flex justify-center items-center ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
-                <button onClick={toggleMenu} className="absolute top-4 right-4 text-gray-800 focus:outline-none">
-                    <Menu />
-                </button>
-                <div className="flex flex-col space-y-4 text-gray-800 text-xl">
-                    <Link href="#about" className="hover:text-blue-500 uppercase nav-link-hover" onClick={toggleMenu}>
-                        About
-                    </Link>
-                    <Link href="#portfolio" className="hover:text-blue-500 uppercase nav-link-hover" onClick={toggleMenu}>
-                        Portfolio
-                    </Link>
-                    <Link href="#contact" className="hover:text-blue-500 uppercase nav-link-hover" onClick={toggleMenu}>
-                        Contact
-                    </Link>
+                {isOpen && (
+                    <button onClick={toggleMenu} className="absolute top-4 right-4 text-gray-800 focus:outline-none">
+                        <X className="size-14 p-2 bg-gray-300 rounded-full" />
+                    </button>
+                )}
+                <div className="flex flex-col justify-between items-start h-[60%] text-gray-800 text-xl">
+                    <SmoothLink
+                        href="/#about"
+                        className="uppercase rounded-xl font-bold text-4xl sm:text-6xl px-4 py-2 flex items-center gap-2 underline decoration-black decoration-solid decoration-2 py-4 px-7"
+                        onClick={toggleMenu}
+                    >
+                        About <ArrowRight className="size-12 sm:size-14" />
+                    </SmoothLink>
+                    <SmoothLink
+                        href="/#portfolio"
+                        className="uppercase rounded-xl font-bold text-4xl sm:text-6xl px-4 py-2 flex items-center gap-2 underline decoration-black decoration-solid decoration-2 py-4 px-7"
+                        onClick={toggleMenu}
+                    >
+                        Portfolio <ArrowRight className="size-12 sm:size-14" />
+                    </SmoothLink>
+                    <SmoothLink
+                        href="/#contact"
+                        className="uppercase rounded-xl font-bold text-4xl sm:text-6xl  flex items-center gap-2 underline decoration-black decoration-solid decoration-2 py-4 px-7 "
+                        onClick={toggleMenu}
+                    >
+                        Contact <ArrowRight className="size-12 sm:size-14" />
+                    </SmoothLink>
                     <a
                         href="https://github.com/E-nkv"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-500 uppercase nav-link-hover"
+                        className="uppercase rounded-xl font-bold text-4xl sm:text-6xl flex items-center gap-2 underline decoration-black decoration-solid decoration-2 py-4 px-7"
                         onClick={toggleMenu}
                     >
-                        GitHub
+                        GitHub <ExternalLink className="size-12 sm:size-14 inline-block" />
                     </a>
                 </div>
             </div>
         </nav>
-    )
-}
-
-function Menu() {
-    return (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
     )
 }
