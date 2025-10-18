@@ -51,9 +51,9 @@ export function About() {
                 </SmoothLink>
                 <div className="text-lg lg:text-xl text-gray-700 leading-relaxed">
                     <p className="mb-4 ">
-                        Hello there! I'm Erik, a software engineer and fullstack web developer based in Valencia, Spain. My passion for
-                        problem-solving began in childhood, leading to victories in chess and physics competitions. This drive evolved
-                        through university, where I honed my skills in Competitive Programming, participating in{" "}
+                        Hello there! I'm Erik, a software engineer and fullstack web developer, currently based in Valencia, Spain. My
+                        passion for problem-solving began in childhood, leading to victories in chess and physics competitions. This drive
+                        evolved through university, where I honed my skills in Competitive Programming, participating in{" "}
                         <span className="whitespace-nowrap">(and winning 😉),</span> multiple university-level programming contests.
                     </p>
                     <p className="">

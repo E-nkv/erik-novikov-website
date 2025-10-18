@@ -14,8 +14,8 @@ export default function Home() {
     return (
         <main>
             <Hero />
-            <Portfolio />
             <About />
+            <Portfolio />
 
             <ScrollHashUpdater sectionIds={sectionsToTrack} />
         </main>

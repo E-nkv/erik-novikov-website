@@ -9,7 +9,6 @@ interface ScrollHashUpdaterProps {
 
 export function ScrollHashUpdater({ sectionIds }: ScrollHashUpdaterProps) {
     const pathname = usePathname()
-    const activeSectionIdRef = useRef<string>("")
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,14 +36,6 @@ export function ScrollHashUpdater({ sectionIds }: ScrollHashUpdaterProps) {
                     }
                 }
             })
-
-            if (currentActive && currentActive !== activeSectionIdRef.current) {
-                activeSectionIdRef.current = currentActive
-                window.history.replaceState(null, "", `${pathname}#${currentActive}`)
-            } else if (!currentActive && activeSectionIdRef.current) {
-                activeSectionIdRef.current = ""
-                window.history.replaceState(null, "", pathname)
-            }
         }
 
         let timeoutId: NodeJS.Timeout | null = null
