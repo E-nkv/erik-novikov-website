@@ -86,7 +86,7 @@ export function Portfolio() {
             </SmoothLink>
             <div className="max-w-3xl mx-auto flex flex-col gap-10">
                 <Project project={projects[0]} />
-                <Project project={projects[0]} />
+                {/* <Project project={projects[0]} /> */}
             </div>
         </section>
     )

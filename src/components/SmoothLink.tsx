@@ -1,10 +1,13 @@
 import Link from "next/link"
 
 function getIdFromHref(href: string): string {
+    if (href.startsWith("#")) {
+        return href.slice(1)
+    }
     if (href.startsWith("/#")) {
         return href.slice(2)
     }
-    throw new Error("Unsupported href format. Should start with /#")
+    throw new Error("Unsupported href format. Should start with /# or #")
 }
 export function SmoothLink({
     href,
