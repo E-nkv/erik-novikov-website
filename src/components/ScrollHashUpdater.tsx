@@ -36,6 +36,12 @@ export function ScrollHashUpdater({ sectionIds }: ScrollHashUpdaterProps) {
                     }
                 }
             })
+
+            if (currentActive && window.location.hash !== `#${currentActive}`) {
+                window.history.replaceState(null, "", `${pathname}#${currentActive}`)
+            } else if (!currentActive && window.location.hash !== "") {
+                window.history.replaceState(null, "", pathname)
+            }
         }
 
         let timeoutId: NodeJS.Timeout | null = null
