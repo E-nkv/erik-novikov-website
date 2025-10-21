@@ -11,8 +11,8 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-    title: "Erik Novikov - Portfolio",
-    description: "Erik Novikov's personal portfolio website.",
+    title: "Erik Novikov",
+    description: "Erik Novikov's personal portfolio website as software engineer.",
 }
 
 export default function RootLayout({
@@ -22,6 +22,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${lato.variable} scroll-smooth`}>
+            <head>
+                <link rel="icon" href="/e.svg" type="image/svg+xml" />
+            </head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <body>
                 <Navbar />
