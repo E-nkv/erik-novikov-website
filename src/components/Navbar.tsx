@@ -17,75 +17,93 @@ export default function Navbar() {
     const sectionIds = ["top", "about", "portfolio", "contact"]
 
     return (
-        <nav id="top" className="bg-white py-2 sticky w-full z-10 top-0 shadow-md">
+        <nav id="top" className="sticky top-0 z-10 w-full bg-white py-2 shadow-md">
             <ScrollHashUpdater sectionIds={sectionIds} />
-            <div className="flex justify-between items-center px-3 ">
+            <div className="flex items-center justify-between px-3">
                 <LogoE />
-                <div className="hidden sm:flex space-x-6">
-                    <SmoothLink href="/#about" className={`px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover `}>
+                <div className="hidden space-x-6 sm:flex">
+                    <SmoothLink
+                        href="/#about"
+                        className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
+                    >
                         About
                     </SmoothLink>
-                    <SmoothLink href="/#portfolio" className={`px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover`}>
+                    <SmoothLink
+                        href="/#portfolio"
+                        className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
+                    >
                         Portfolio
                     </SmoothLink>
                     {/* <Link href="#resume" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
                         Resume
                     </Link> */}
-                    <SmoothLink href="/#contact" className={`px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover`}>
+                    <SmoothLink
+                        href="/#contact"
+                        className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
+                    >
                         Contact
                     </SmoothLink>
                     <a
                         href="https://github.com/E-nkv"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover"
+                        className="nav-link-hover p-2 text-gray-800 uppercase hover:text-blue-500"
                     >
                         GitHub
                     </a>
                 </div>
-                <div className="sm:hidden flex items-center">
+                <div className="flex items-center sm:hidden">
                     <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
-                        {!isOpen && <MenuIcon className="w-6 h-6 transition-transform duration-500 ease-in-out" />}
+                        {!isOpen && (
+                            <MenuIcon className="h-6 w-6 transition-transform duration-500 ease-in-out" />
+                        )}
                     </button>
                 </div>
             </div>
-            {isOpen && <div className="fixed inset-0 w-full z-40" onClick={toggleMenu}></div>}
+            {isOpen && <div className="fixed inset-0 z-40 w-full" onClick={toggleMenu}></div>}
             <div
-                className={`sm:hidden fixed inset-y-0 right-0 bg-white z-50 w-full transform transition-transform duration-500 ease-in-out flex flex-col items-center p-4 ${
+                className={`fixed inset-y-0 right-0 z-50 flex w-full transform flex-col items-center bg-white p-4 transition-transform duration-500 ease-in-out sm:hidden ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
                 {isOpen && (
-                    <button onClick={toggleMenu} className="absolute top-4 right-4 text-gray-800 focus:outline-none">
-                        <XIcon className="size-14 p-2 bg-gray-200 rounded-full" />
+                    <button
+                        onClick={toggleMenu}
+                        className="absolute top-4 right-4 text-gray-800 focus:outline-none"
+                    >
+                        <XIcon className="size-14 rounded-full bg-gray-200 p-2" />
                     </button>
                 )}
-                <div className="flex flex-col space-y-12 text-gray-800 text-xl mt-16 ">
-                    <SmoothLink href="#about" className="uppercase text-4xl sm:text-5xl font-bold flex items-center" onClick={toggleMenu}>
-                        About <ArrowRight className="inline-block ml-2 size-10" />
+                <div className="mt-16 flex flex-col space-y-12 text-xl text-gray-800">
+                    <SmoothLink
+                        href="#about"
+                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
+                        onClick={toggleMenu}
+                    >
+                        About <ArrowRight className="ml-2 inline-block size-10" />
                     </SmoothLink>
                     <SmoothLink
                         href="#portfolio"
-                        className="uppercase text-4xl sm:text-5xl font-bold flex items-center"
+                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
                         onClick={toggleMenu}
                     >
-                        Portfolio <ArrowRight className="inline-block ml-2 size-10" />
+                        Portfolio <ArrowRight className="ml-2 inline-block size-10" />
                     </SmoothLink>
                     <SmoothLink
                         href="/#contact"
-                        className="uppercase text-4xl sm:text-5xl font-bold flex items-center"
+                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
                         onClick={toggleMenu}
                     >
-                        Contact <ArrowRight className="inline-block ml-2 size-10" />
+                        Contact <ArrowRight className="ml-2 inline-block size-10" />
                     </SmoothLink>
                     <a
                         href="https://github.com/E-nkv"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="uppercase text-4xl sm:text-5xl font-bold flex items-center"
+                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
                         onClick={toggleMenu}
                     >
-                        GitHub <ExternalLinkIcon className="inline-block ml-2 size-10" />
+                        GitHub <ExternalLinkIcon className="ml-2 inline-block size-10" />
                     </a>
                 </div>
             </div>
