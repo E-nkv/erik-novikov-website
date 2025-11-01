@@ -34,9 +34,12 @@ export default function Navbar() {
                     >
                         Portfolio
                     </SmoothLink>
-                    {/* <Link href="#resume" className="px-2 py-2 text-gray-800 hover:text-blue-500 uppercase nav-link-hover">
-                        Resume
-                    </Link> */}
+                    <Link
+                        href="/blogs"
+                        className="nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500"
+                    >
+                        Blogs
+                    </Link>
                     <SmoothLink
                         href="/#contact"
                         className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
@@ -89,6 +92,13 @@ export default function Navbar() {
                     >
                         Portfolio <ArrowRight className="ml-2 inline-block size-10" />
                     </SmoothLink>
+                    <Link
+                        href="/blogs"
+                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
+                        onClick={toggleMenu}
+                    >
+                        Blogs <ArrowRight className="ml-2 inline-block size-10" />
+                    </Link>
                     <SmoothLink
                         href="/#contact"
                         className="flex items-center text-4xl font-bold uppercase sm:text-5xl"

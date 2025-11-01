@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 function getIdFromHref(href: string): string {
     if (href.startsWith("#")) {
@@ -7,7 +10,7 @@ function getIdFromHref(href: string): string {
     if (href.startsWith("/#")) {
         return href.slice(2)
     }
-    throw new Error("Unsupported href format. Should start with /# or #")
+    return ""
 }
 export function SmoothLink({
     href,
@@ -22,16 +25,22 @@ export function SmoothLink({
     style?: React.CSSProperties
     onClick?: () => void
 }) {
+    const pathname = usePathname()
+    const isHash = href.startsWith("#") || href.startsWith("/#")
+    const normalizedHref = href.startsWith("#") ? `/${href}` : href
     return (
         <Link
             className={className}
-            href={href}
+            href={pathname !== "/" && isHash ? normalizedHref : href}
             onClick={(e) => {
+                // Only intercept for smooth in-page navigation when on the home page
+                if (!(isHash && pathname === "/")) return
                 e.preventDefault()
                 if (onClick) {
                     onClick()
                 }
                 const elementID = getIdFromHref(href)
+                if (!elementID) return
                 if (elementID === "top") {
                     window.scrollTo({ top: 0, behavior: "smooth" })
                     window.history.pushState(null, "", href)

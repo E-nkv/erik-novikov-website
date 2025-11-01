@@ -15,6 +15,8 @@ export type BlogFrontmatter = {
     lang: string
     slug: string
     date: string
+    publish_date?: string
+    hook?: string
     summary?: string
     tags?: string[]
 }
@@ -28,11 +30,8 @@ export type BlogPost = {
 const BLOGS_DIR = path.join(process.cwd(), "blogs")
 
 export function getLanguages(): string[] {
-    if (!fs.existsSync(BLOGS_DIR)) return []
-    return fs
-        .readdirSync(BLOGS_DIR, { withFileTypes: true })
-        .filter((d) => d.isDirectory())
-        .map((d) => d.name)
+    // Simplified: we only support English and Spanish
+    return ["en", "es"]
 }
 
 export function getAllPostsMetaByLang(lang: string): BlogFrontmatter[] {
@@ -51,7 +50,7 @@ export function getAllPostsMetaByLang(lang: string): BlogFrontmatter[] {
 }
 
 export function getAllSlugs(): { lang: string; slug: string }[] {
-    const langs = getLanguages()
+    const langs: Array<"en" | "es"> = ["en", "es"]
     const pairs: { lang: string; slug: string }[] = []
     for (const lang of langs) {
         const dir = path.join(BLOGS_DIR, lang)
@@ -73,9 +72,8 @@ export function getAllUnifiedSlugs(): string[] {
 }
 
 export function getTranslationsByCanonicalId(canonicalId: string): BlogFrontmatter[] {
-    const langs = getLanguages()
     const out: BlogFrontmatter[] = []
-    for (const lang of langs) {
+    for (const lang of ["en", "es"]) {
         const metas = getAllPostsMetaByLang(lang)
         for (const meta of metas) {
             if (meta.canonicalId === canonicalId) out.push(meta)
@@ -97,38 +95,52 @@ export async function getPostBySlug(lang: string, slug: string): Promise<BlogPos
 export async function findPostByAnySlug(
     slug: string
 ): Promise<{ post: BlogPost; alt?: BlogFrontmatter } | null> {
-    const langs = getLanguages()
-    for (const lang of langs) {
+    // Try English first, then Spanish
+    for (const lang of ["en", "es"]) {
         const post = await getPostBySlug(lang, slug)
         if (post) {
             const translations = getTranslationsByCanonicalId(post.frontmatter.canonicalId)
-            const alt = translations.find((t) => t.slug !== slug)
+            const alt = translations.find((t) => t.lang !== post.frontmatter.lang)
             return { post, alt }
         }
     }
     return null
 }
 
-export function getIndexEntries(): { primary: BlogFrontmatter; alternates: BlogFrontmatter[] }[] {
-    // Group by canonicalId and pick English as primary if available, else first
-    const langs = getLanguages()
-    const all: BlogFrontmatter[] = []
-    for (const lang of langs) all.push(...getAllPostsMetaByLang(lang))
+export function getIndexEntries(): { primary: BlogFrontmatter; other?: BlogFrontmatter }[] {
+    // Group by canonicalId and pick English as primary if available, else Spanish
+    const all: BlogFrontmatter[] = [...getAllPostsMetaByLang("en"), ...getAllPostsMetaByLang("es")]
     const byCanon = new Map<string, BlogFrontmatter[]>()
     for (const meta of all) {
         const arr = byCanon.get(meta.canonicalId) || []
         arr.push(meta)
         byCanon.set(meta.canonicalId, arr)
     }
-    const entries: { primary: BlogFrontmatter; alternates: BlogFrontmatter[] }[] = []
+    const entries: { primary: BlogFrontmatter; other?: BlogFrontmatter }[] = []
     for (const arr of byCanon.values()) {
         const primary = arr.find((m) => m.lang === "en") || arr[0]
-        const alternates = arr.filter((m) => m.slug !== primary.slug)
-        entries.push({ primary, alternates })
+        const other = arr.find((m) => m.lang !== primary.lang)
+        entries.push({ primary, other })
     }
     // sort by date desc using primary
     entries.sort((a, b) => (a.primary.date < b.primary.date ? 1 : -1))
     return entries
+}
+
+export function formatYearMonth(dateIso: string, lang: "en" | "es"): string {
+    const d = new Date(dateIso)
+    if (Number.isNaN(d.getTime())) return dateIso
+    if (lang === "en") {
+        return d.toLocaleDateString("en-US", { month: "long", year: "numeric" })
+    }
+    // Spanish: format as "Octubre 2025" (capitalize month, remove " de ")
+    const parts = new Intl.DateTimeFormat("es-ES", { month: "long", year: "numeric" })
+        .formatToParts(d)
+        .filter((p) => p.type === "month" || p.type === "year")
+    const month = parts.find((p) => p.type === "month")?.value || ""
+    const year = parts.find((p) => p.type === "year")?.value || ""
+    const capMonth = month.charAt(0).toUpperCase() + month.slice(1)
+    return `${capMonth} ${year}`
 }
 
 export async function renderMarkdownToHtml(md: string): Promise<string> {
