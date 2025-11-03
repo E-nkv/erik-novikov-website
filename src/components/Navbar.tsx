@@ -22,6 +22,12 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-3">
                 <LogoE />
                 <div className="hidden space-x-6 sm:flex">
+                    <Link
+                        href="/blogs"
+                        className="nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500"
+                    >
+                        Blog
+                    </Link>
                     <SmoothLink
                         href="/#about"
                         className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
@@ -34,12 +40,7 @@ export default function Navbar() {
                     >
                         Portfolio
                     </SmoothLink>
-                    <Link
-                        href="/blogs"
-                        className="nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500"
-                    >
-                        Blogs
-                    </Link>
+
                     <SmoothLink
                         href="/#contact"
                         className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
@@ -78,6 +79,13 @@ export default function Navbar() {
                     </button>
                 )}
                 <div className="mt-16 flex flex-col space-y-12 text-xl text-gray-800">
+                    <Link
+                        href="/blogs"
+                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
+                        onClick={toggleMenu}
+                    >
+                        Blog <ArrowRight className="ml-2 inline-block size-10" />
+                    </Link>
                     <SmoothLink
                         href="#about"
                         className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
@@ -92,13 +100,7 @@ export default function Navbar() {
                     >
                         Portfolio <ArrowRight className="ml-2 inline-block size-10" />
                     </SmoothLink>
-                    <Link
-                        href="/blogs"
-                        className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
-                        onClick={toggleMenu}
-                    >
-                        Blogs <ArrowRight className="ml-2 inline-block size-10" />
-                    </Link>
+
                     <SmoothLink
                         href="/#contact"
                         className="flex items-center text-4xl font-bold uppercase sm:text-5xl"

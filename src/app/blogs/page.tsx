@@ -4,8 +4,9 @@ import { getIndexEntries, formatYearMonth } from "@/lib/blogs"
 export const dynamic = "error"
 
 export default function BlogIndexPage() {
-    const entries = getIndexEntries()
-    return (
+    try {
+        const entries = getIndexEntries()
+        return (
         <div className="mx-auto min-h-[95vh] max-w-4xl px-6 py-16 sm:px-10 lg:px-24">
             <h1 className="mb-13 text-center text-4xl font-bold tracking-tight sm:text-5xl">
                 My blogs
@@ -40,4 +41,8 @@ export default function BlogIndexPage() {
             </ul>
         </div>
     )
+    } catch (error) {
+        console.error("Error loading blog index:", error)
+        throw error // Re-throw to trigger error.tsx
+    }
 }

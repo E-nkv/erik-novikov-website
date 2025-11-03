@@ -26,4 +26,4 @@ LLM Guidance
 
 - When adding a new post, ensure both language files share the same canonicalId
 - Prefer utilities that scan blogs/\*\* and resolve by slug or canonicalId
-- Keep URLs language-specific, but data keyed by canonicalId (for stars)
+- Keep URLs language-specific, but data keyed by canonicalId

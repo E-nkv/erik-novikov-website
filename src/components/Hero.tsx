@@ -20,10 +20,10 @@ export function Hero() {
                 </p>
             </div>
             <SmoothLink
-                href="/#portfolio"
+                href="/#about"
                 className="mt-8 rounded-full bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-colors duration-300 hover:bg-blue-600"
             >
-                View Portfolio
+                About me
             </SmoothLink>
         </section>
     )

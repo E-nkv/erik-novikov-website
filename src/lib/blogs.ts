@@ -83,13 +83,18 @@ export function getTranslationsByCanonicalId(canonicalId: string): BlogFrontmatt
 }
 
 export async function getPostBySlug(lang: string, slug: string): Promise<BlogPost | null> {
-    const file = path.join(BLOGS_DIR, lang, `${slug}.md`)
-    if (!fs.existsSync(file)) return null
-    const raw = fs.readFileSync(file, "utf8")
-    const { data, content } = matter(raw)
-    const frontmatter = data as BlogFrontmatter
-    const html = await renderMarkdownToHtml(content)
-    return { frontmatter, html, filepath: file }
+    try {
+        const file = path.join(BLOGS_DIR, lang, `${slug}.md`)
+        if (!fs.existsSync(file)) return null
+        const raw = fs.readFileSync(file, "utf8")
+        const { data, content } = matter(raw)
+        const frontmatter = data as BlogFrontmatter
+        const html = await renderMarkdownToHtml(content)
+        return { frontmatter, html, filepath: file }
+    } catch (error) {
+        console.error(`Error loading post ${lang}/${slug}:`, error)
+        return null
+    }
 }
 
 export async function findPostByAnySlug(
@@ -144,36 +149,41 @@ export function formatYearMonth(dateIso: string, lang: "en" | "es"): string {
 }
 
 export async function renderMarkdownToHtml(md: string): Promise<string> {
-    const schema = {
-        ...defaultSchema,
-        tagNames: [...(defaultSchema.tagNames || []), "video", "source", "iframe"],
-        attributes: {
-            ...(defaultSchema.attributes || {}),
-            video: [
-                "src",
-                "controls",
-                "poster",
-                "width",
-                "height",
-                "playsinline",
-                "muted",
-                "loop",
-                "autoplay",
-            ],
-            source: ["src", "type"],
-            iframe: ["src", "width", "height", "allow", "allowfullscreen", "referrerpolicy"],
-            img: ["src", "alt", "title", "width", "height", "loading"],
-            p: ["className"],
-            div: ["className", "style"],
-        },
+    try {
+        const schema = {
+            ...defaultSchema,
+            tagNames: [...(defaultSchema.tagNames || []), "video", "source", "iframe"],
+            attributes: {
+                ...(defaultSchema.attributes || {}),
+                video: [
+                    "src",
+                    "controls",
+                    "poster",
+                    "width",
+                    "height",
+                    "playsinline",
+                    "muted",
+                    "loop",
+                    "autoplay",
+                ],
+                source: ["src", "type"],
+                iframe: ["src", "width", "height", "allow", "allowfullscreen", "referrerpolicy"],
+                img: ["src", "alt", "title", "width", "height", "loading"],
+                p: ["className"],
+                div: ["className", "style"],
+            },
+        }
+        const file = await unified()
+            .use(remarkParse)
+            .use(remarkGfm)
+            .use(remarkRehype, { allowDangerousHtml: true })
+            .use(rehypeRaw)
+            .use(rehypeSanitize, schema)
+            .use(rehypeStringify)
+            .process(md)
+        return String(file)
+    } catch (error) {
+        console.error("Error rendering markdown to HTML:", error)
+        throw new Error("Failed to render markdown content")
     }
-    const file = await unified()
-        .use(remarkParse)
-        .use(remarkGfm)
-        .use(remarkRehype, { allowDangerousHtml: true })
-        .use(rehypeRaw)
-        .use(rehypeSanitize, schema)
-        .use(rehypeStringify)
-        .process(md)
-    return String(file)
 }

@@ -17,10 +17,16 @@ Short answer: No, you are not doomed 🫂. Technology in general is a field that
 ## But isn't it true that the tech market is getting tougher?
 
 Of course it is. The law of supply and demand clearly applies: the more developers, the more your work devalues. Then what's the catch? It's actually pretty simple. Developer Bob isn't the same as Developer Chad, even in the same field and the same "seniority" level, especially so in 2025. The difference lies in the following:
-1. How efficiently you can utilize your knowledge to solve problems, not how much knowledge you have. i.e., Bob (who reads Go books for breakfast) says he cannot migrate a microservice from Java to Go because he's never worked with Java in the past; meanwhile, Chad also doesn't know Java, but he has very strong fundamentals in programming languages and networking in general; how to work with different protocols (REST, SOAP, RPC, WebSockets, WebRTC); and concurrency. So, Chad quickly adapts to the situation and solves the problem by leveraging his skills.
+1. How efficiently you can utilize your knowledge to solve problems, not how much knowledge you have. i.e., Bob (who reads Go books for breakfast) says he cannot migrate a microservice from Go to Java because he's never worked with Java in the past; meanwhile, Chad also doesn't know Java, but he has very strong fundamentals in programming languages and networking in general; how to work with different protocols (REST, SOAP, RPC, WebSockets, WebRTC); and concurrency. So, Chad quickly adapts to the situation and solves the problem by leveraging his skills.
 2. How well you use AI. New models and agents are being released all the time, so if you aren't optimizing your workflow with AI, you simply won't be able to produce the same results. Learn about LLMs in general, prompting, fine-tuning, and brush up on Model Context Protocol (MCP) servers and how to apply them to your work.
 3. Your learning rate. At least in tech, while you do need a bare minimum of skills, what truly sets you apart is how fast you can learn something new, absorb it effectively, and apply it to your project.
 4. Chad reads this blog whereas Bob doesn't 😉.
+
 ## Final words
 
 You are not doomed. The tech market is tough, but don't stress over it. Instead, become extremely competent; master your craft; focus on solving problems rather than specific technologies; and never stop learning and improving. Have fun in the process, and enjoy the journey!
+
+## Recomended blogs
+
+[The ultimate fullstack developer guide   &#8594;](https://eriknovikov.pages.dev/blogs/the-ultimate-fullstack-developer-guide) 
+
