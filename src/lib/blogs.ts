@@ -19,6 +19,7 @@ export type BlogFrontmatter = {
     hook?: string
     summary?: string
     tags?: string[]
+    recommended?: string[] // Array of canonicalIds for recommended blogs
 }
 
 export type BlogPost = {
@@ -113,6 +114,9 @@ export async function findPostByAnySlug(
 }
 
 export function getIndexEntries(): { primary: BlogFrontmatter; other?: BlogFrontmatter }[] {
+    // Pinned entries in order - these will appear first
+    const PINNED_CANONICAL_IDS = ["welcome-to-my-blog", "ultimate-developer-guide-2025"]
+
     // Group by canonicalId and pick English as primary if available, else Spanish
     const all: BlogFrontmatter[] = [...getAllPostsMetaByLang("en"), ...getAllPostsMetaByLang("es")]
     const byCanon = new Map<string, BlogFrontmatter[]>()
@@ -127,9 +131,32 @@ export function getIndexEntries(): { primary: BlogFrontmatter; other?: BlogFront
         const other = arr.find((m) => m.lang !== primary.lang)
         entries.push({ primary, other })
     }
-    // sort by date desc using primary
-    entries.sort((a, b) => (a.primary.date < b.primary.date ? 1 : -1))
-    return entries
+
+    // Separate pinned and unpinned entries
+    const pinnedEntries: { primary: BlogFrontmatter; other?: BlogFrontmatter }[] = []
+    const unpinnedEntries: { primary: BlogFrontmatter; other?: BlogFrontmatter }[] = []
+
+    for (const entry of entries) {
+        const index = PINNED_CANONICAL_IDS.indexOf(entry.primary.canonicalId)
+        if (index !== -1) {
+            pinnedEntries.push(entry)
+        } else {
+            unpinnedEntries.push(entry)
+        }
+    }
+
+    // Sort pinned entries by their order in PINNED_CANONICAL_IDS
+    pinnedEntries.sort((a, b) => {
+        const aIndex = PINNED_CANONICAL_IDS.indexOf(a.primary.canonicalId)
+        const bIndex = PINNED_CANONICAL_IDS.indexOf(b.primary.canonicalId)
+        return aIndex - bIndex
+    })
+
+    // Sort unpinned entries by date desc using primary
+    unpinnedEntries.sort((a, b) => (a.primary.date < b.primary.date ? 1 : -1))
+
+    // Combine: pinned first, then unpinned
+    return [...pinnedEntries, ...unpinnedEntries]
 }
 
 export function formatYearMonth(dateIso: string, lang: "en" | "es"): string {
@@ -146,6 +173,21 @@ export function formatYearMonth(dateIso: string, lang: "en" | "es"): string {
     const year = parts.find((p) => p.type === "year")?.value || ""
     const capMonth = month.charAt(0).toUpperCase() + month.slice(1)
     return `${capMonth} ${year}`
+}
+
+export function getRecommendedBlogs(canonicalIds: string[], currentLang: "en" | "es"): BlogFrontmatter[] {
+    const recommended: BlogFrontmatter[] = []
+    for (const canonicalId of canonicalIds) {
+        const translations = getTranslationsByCanonicalId(canonicalId)
+        // Prefer the same language as current blog, fallback to English, then any available
+        const preferred = translations.find((t) => t.lang === currentLang)
+            || translations.find((t) => t.lang === "en")
+            || translations[0]
+        if (preferred) {
+            recommended.push(preferred)
+        }
+    }
+    return recommended
 }
 
 export async function renderMarkdownToHtml(md: string): Promise<string> {

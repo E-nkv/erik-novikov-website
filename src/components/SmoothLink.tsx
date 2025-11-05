@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -26,12 +27,21 @@ export function SmoothLink({
     onClick?: () => void
 }) {
     const pathname = usePathname()
+    const [mounted, setMounted] = useState(false)
+    
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+    
     const isHash = href.startsWith("#") || href.startsWith("/#")
     const normalizedHref = href.startsWith("#") ? `/${href}` : href
+    // During SSR, use the original href to avoid hydration mismatch
+    const finalHref = mounted && pathname !== "/" && isHash ? normalizedHref : href
+    
     return (
         <Link
             className={className}
-            href={pathname !== "/" && isHash ? normalizedHref : href}
+            href={finalHref}
             onClick={(e) => {
                 // Only intercept for smooth in-page navigation when on the home page
                 if (!(isHash && pathname === "/")) return

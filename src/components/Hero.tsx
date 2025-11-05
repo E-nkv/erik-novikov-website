@@ -19,12 +19,20 @@ export function Hero() {
                     I'm a software engineer.
                 </p>
             </div>
-            <SmoothLink
-                href="/#about"
-                className="mt-8 rounded-full bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-colors duration-300 hover:bg-blue-600"
-            >
-                About me
-            </SmoothLink>
+            <div className="flex items-center justify-center gap-4">
+                <SmoothLink
+                    href="/#about"
+                    className="mt-8 rounded-full bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-colors duration-300 hover:bg-blue-600"
+                >
+                    About me
+                </SmoothLink>
+                <Link
+                    href="/blogs"
+                    className="hover:bg-gray-150 mt-8 rounded-full border-2 border-gray-100 px-8 py-4 text-lg font-semibold shadow-lg transition-colors duration-300 hover:border-gray-300"
+                >
+                    My Blog
+                </Link>
+            </div>
         </section>
     )
 }

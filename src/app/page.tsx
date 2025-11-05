@@ -10,13 +10,13 @@ import { Contact } from "@/components/Contact"
 import { ScrollHashUpdater } from "@/components/ScrollHashUpdater"
 
 export default function Home() {
-    const sectionsToTrack = ["top", "about", "portfolio", "contact"]
+    const sectionsToTrack = ["top", "about", "contact"]
 
     return (
         <>
             <Hero />
             <About />
-            <Portfolio />
+            {/* <Portfolio /> */}
             <Contact />
 
             <ScrollHashUpdater sectionIds={sectionsToTrack} />

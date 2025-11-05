@@ -34,12 +34,12 @@ export default function Navbar() {
                     >
                         About
                     </SmoothLink>
-                    <SmoothLink
+                    {/* <SmoothLink
                         href="/#portfolio"
                         className={`nav-link-hover px-2 py-2 text-gray-800 uppercase hover:text-blue-500`}
                     >
                         Portfolio
-                    </SmoothLink>
+                    </SmoothLink> */}
 
                     <SmoothLink
                         href="/#contact"
@@ -69,6 +69,7 @@ export default function Navbar() {
                 className={`fixed inset-y-0 right-0 z-50 flex w-full transform flex-col items-center bg-white p-4 transition-transform duration-500 ease-in-out sm:hidden ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
+                suppressHydrationWarning
             >
                 {isOpen && (
                     <button
@@ -78,13 +79,17 @@ export default function Navbar() {
                         <XIcon className="size-14 rounded-full bg-gray-200 p-2" />
                     </button>
                 )}
-                <div className="mt-16 flex flex-col space-y-12 text-xl text-gray-800">
+                <div
+                    className="mt-16 flex flex-col space-y-12 text-xl text-gray-800"
+                    suppressHydrationWarning
+                >
                     <Link
                         href="/blogs"
                         className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
                         onClick={toggleMenu}
+                        suppressHydrationWarning
                     >
-                        Blog <ArrowRight className="ml-2 inline-block size-10" />
+                        Blog <ExternalLinkIcon className="ml-3 inline-block size-10" />
                     </Link>
                     <SmoothLink
                         href="#about"
@@ -93,13 +98,13 @@ export default function Navbar() {
                     >
                         About <ArrowRight className="ml-2 inline-block size-10" />
                     </SmoothLink>
-                    <SmoothLink
+                    {/* <SmoothLink
                         href="#portfolio"
                         className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
                         onClick={toggleMenu}
                     >
                         Portfolio <ArrowRight className="ml-2 inline-block size-10" />
-                    </SmoothLink>
+                    </SmoothLink> */}
 
                     <SmoothLink
                         href="/#contact"
@@ -115,7 +120,7 @@ export default function Navbar() {
                         className="flex items-center text-4xl font-bold uppercase sm:text-5xl"
                         onClick={toggleMenu}
                     >
-                        GitHub <ExternalLinkIcon className="ml-2 inline-block size-10" />
+                        GitHub <ExternalLinkIcon className="ml-3 inline-block size-10" />
                     </a>
                 </div>
             </div>
