@@ -175,14 +175,18 @@ export function formatYearMonth(dateIso: string, lang: "en" | "es"): string {
     return `${capMonth} ${year}`
 }
 
-export function getRecommendedBlogs(canonicalIds: string[], currentLang: "en" | "es"): BlogFrontmatter[] {
+export function getRecommendedBlogs(
+    canonicalIds: string[],
+    currentLang: "en" | "es"
+): BlogFrontmatter[] {
     const recommended: BlogFrontmatter[] = []
     for (const canonicalId of canonicalIds) {
         const translations = getTranslationsByCanonicalId(canonicalId)
         // Prefer the same language as current blog, fallback to English, then any available
-        const preferred = translations.find((t) => t.lang === currentLang)
-            || translations.find((t) => t.lang === "en")
-            || translations[0]
+        const preferred =
+            translations.find((t) => t.lang === currentLang) ||
+            translations.find((t) => t.lang === "en") ||
+            translations[0]
         if (preferred) {
             recommended.push(preferred)
         }

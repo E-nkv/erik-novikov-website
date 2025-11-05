@@ -21,9 +21,7 @@ export default function Error({
             <p className="mb-8 text-gray-600">
                 We encountered an unexpected error. Please try again or return to the home page.
             </p>
-            {error.digest && (
-                <p className="mb-4 text-xs text-gray-500">Error ID: {error.digest}</p>
-            )}
+            {error.digest && <p className="mb-4 text-xs text-gray-500">Error ID: {error.digest}</p>}
             <div className="flex items-center justify-center gap-4">
                 <button
                     onClick={reset}
@@ -31,23 +29,13 @@ export default function Error({
                 >
                     Try again
                 </button>
-                <Link
-                    href="/"
-                    className="rounded-md border px-4 py-2 hover:bg-blue-50"
-                >
+                <Link href="/" className="rounded-md border px-4 py-2 hover:bg-blue-50">
                     Go to Home
                 </Link>
-                <Link
-                    href="/blogs"
-                    className="rounded-md border px-4 py-2 hover:bg-blue-50"
-                >
+                <Link href="/blogs" className="rounded-md border px-4 py-2 hover:bg-blue-50">
                     Browse Blogs
                 </Link>
             </div>
         </main>
     )
 }
-
-
-
-

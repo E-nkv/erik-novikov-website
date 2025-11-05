@@ -63,84 +63,82 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    let found
     try {
-        const { slug } = await params
-        const found = await findPostByAnySlug(slug)
-        if (!found) {
-            notFound()
-        }
-        const { post, alt } = found
-        return (
-            <div className="lg:px-14- min-h-[95vh] px-6 py-16 sm:px-10">
-                <article className="markdown mx-auto max-w-4xl">
-                    <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                        {post.frontmatter.title}
-                    </h1>
-                    <p className="mb-4 text-sm text-gray-600">
-                        {formatYearMonth(
-                            post.frontmatter.date,
-                            post.frontmatter.lang as "en" | "es"
-                        )}
-                    </p>
-                    {alt && (
-                        <p className="mb-6 text-sm text-gray-700">
-                            {post.frontmatter.lang === "en" ? (
-                                <>
-                                    This blog is also available in Spanish:{" "}
-                                    <Link
-                                        className="text-blue-600 underline"
-                                        href={`/blogs/${alt.slug}`}
-                                    >
-                                        {alt.title}
-                                    </Link>
-                                </>
-                            ) : (
-                                <>
-                                    Este blog también está disponible en inglés:{" "}
-                                    <Link
-                                        className="text-blue-600 underline"
-                                        href={`/blogs/${alt.slug}`}
-                                    >
-                                        {alt.title}
-                                    </Link>
-                                </>
-                            )}
-                        </p>
-                    )}
-                    <div
-                        className="markdown-content"
-                        dangerouslySetInnerHTML={{ __html: processMarkdownLinks(post.html) }}
-                    />
-                    {post.frontmatter.recommended && post.frontmatter.recommended.length > 0 && (
-                        <div className="mt-12 border-t border-gray-200 pt-8">
-                            <h2 className="mb-4 text-2xl font-bold">Recommended blogs</h2>
-                            <ul className="space-y-2">
-                                {getRecommendedBlogs(
-                                    post.frontmatter.recommended,
-                                    post.frontmatter.lang as "en" | "es"
-                                ).map((blog) => (
-                                    <li key={blog.canonicalId}>
-                                        <Link
-                                            className="text-blue-600 underline hover:text-blue-800"
-                                            href={`/blogs/${blog.slug}`}
-                                        >
-                                            {blog.title} →
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    <div className="mt-10 text-right">
-                        <Link className="text-blue-600 underline" href={`/blogs`}>
-                            ← Back to blogs
-                        </Link>
-                    </div>
-                </article>
-            </div>
-        )
+        found = await findPostByAnySlug(slug)
     } catch (error) {
         console.error("Error loading blog post:", error)
         throw error // Re-throw to trigger error.tsx
     }
+    if (!found) {
+        notFound()
+    }
+    const { post, alt } = found
+    return (
+        <div className="lg:px-14- min-h-[95vh] px-6 py-16 sm:px-10">
+            <article className="markdown mx-auto max-w-4xl">
+                <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                    {post.frontmatter.title}
+                </h1>
+                <p className="mb-4 text-sm text-gray-600">
+                    {formatYearMonth(post.frontmatter.date, post.frontmatter.lang as "en" | "es")}
+                </p>
+                {alt && (
+                    <p className="mb-6 text-sm text-gray-700">
+                        {post.frontmatter.lang === "en" ? (
+                            <>
+                                This blog is also available in Spanish:{" "}
+                                <Link
+                                    className="text-blue-600 underline"
+                                    href={`/blogs/${alt.slug}`}
+                                >
+                                    {alt.title}
+                                </Link>
+                            </>
+                        ) : (
+                            <>
+                                Este blog también está disponible en inglés:{" "}
+                                <Link
+                                    className="text-blue-600 underline"
+                                    href={`/blogs/${alt.slug}`}
+                                >
+                                    {alt.title}
+                                </Link>
+                            </>
+                        )}
+                    </p>
+                )}
+                <div
+                    className="markdown-content"
+                    dangerouslySetInnerHTML={{ __html: processMarkdownLinks(post.html) }}
+                />
+                {post.frontmatter.recommended && post.frontmatter.recommended.length > 0 && (
+                    <div className="mt-12 border-t border-gray-200 pt-8">
+                        <h2 className="mb-4 text-2xl font-bold">Recommended blogs</h2>
+                        <ul className="space-y-2">
+                            {getRecommendedBlogs(
+                                post.frontmatter.recommended,
+                                post.frontmatter.lang as "en" | "es"
+                            ).map((blog) => (
+                                <li key={blog.canonicalId}>
+                                    <Link
+                                        className="text-blue-600 underline hover:text-blue-800"
+                                        href={`/blogs/${blog.slug}`}
+                                    >
+                                        {blog.title} →
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+                <div className="mt-10 text-right">
+                    <Link className="text-blue-600 underline" href={`/blogs`}>
+                        ← Back to blogs
+                    </Link>
+                </div>
+            </article>
+        </div>
+    )
 }
