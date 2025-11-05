@@ -5,7 +5,7 @@ export function LogoE({ className }: { className?: string }) {
     return (
         <SmoothLink
             className={cn(
-                "size-10 relative flex items-center justify-center text-xl font-bold transition-colors duration-300 ease-in-out hover:bg-blue-400 select-none cursor-pointer",
+                "relative flex size-10 cursor-pointer items-center justify-center text-xl font-bold transition-colors duration-300 ease-in-out select-none hover:bg-blue-400",
                 className
             )}
             style={{

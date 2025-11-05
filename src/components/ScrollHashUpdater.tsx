@@ -19,7 +19,8 @@ export function ScrollHashUpdater({ sectionIds }: ScrollHashUpdaterProps) {
                 const section = document.getElementById(id)
                 if (section) {
                     const rect = section.getBoundingClientRect()
-                    const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+                    const viewportHeight =
+                        window.innerHeight || document.documentElement.clientHeight
 
                     const visibleTop = Math.max(0, rect.top)
                     const visibleBottom = Math.min(viewportHeight, rect.bottom)

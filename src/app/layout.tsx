@@ -26,9 +26,9 @@ export default function RootLayout({
                 <link rel="icon" href="/e.svg" type="image/svg+xml" />
             </head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-            <body>
+            <body className="flex min-h-screen flex-col">
                 <Navbar />
-                {children}
+                <main className="flex-1">{children}</main>
                 <Footer />
             </body>
         </html>
