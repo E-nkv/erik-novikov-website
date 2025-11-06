@@ -44,7 +44,7 @@ I think it will be useful for you to know about how I write my blogs:
     2. Resources that are awfully long and boring, that make you sleepy rather than excited about tech. (YES I'M TALKING TO YOU, UNIVERSITY BOOKS 😡). 
 So, I try to strike the perfect balance - call it Yin Yang if you will ☯️.
 
-- **I write them in English first, then translate them to Spanish**: The English blogs will always (in my opinion) be better than the Spanish ones, since they convey what I'm trying to express much better. I do make sure that the AI-generated translations into Spanish are correct, and fix parts that are 'linguistically correct' but that don't feel that natural. So in general, read the Spanish versions only if you really don't know English (which I super duper strongly recommend you learn ASAP)
+- **I write them in English first, then translate them to Spanish**: The English blogs will always (in my opinion) be better than the Spanish ones, since they convey what I'm trying to express much better. I do make sure that the AI-generated translations into Spanish are correct, but they don't feel as natural as the English ones. So in general, read the Spanish versions only if you really don't know English (which I super duper strongly recommend you learn ASAP if you're in tech).
 
 ## Have a question? Or just want to talk? 
 

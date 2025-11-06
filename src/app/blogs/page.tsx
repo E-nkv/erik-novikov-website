@@ -16,7 +16,7 @@ export default function BlogIndexPage() {
             <h1 className="mb-13 text-center text-4xl font-bold tracking-tight sm:text-5xl">
                 My blogs
             </h1>
-            <ul className="space-y-6">
+            <ul className="space-y-12">
                 {entries.map(({ primary, other }) => (
                     <li key={primary.canonicalId} className="group">
                         <Link href={`/blogs/${primary.slug}`} className="block">
