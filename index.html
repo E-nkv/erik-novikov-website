@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Erik Novikov - Software Engineer Portfolio</title>
+        <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <canvas id="particles"></canvas>
+        <div id="spotlight"></div>
+
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="static-gradient-span"
+                        >Hi!<span class="wave">👋</span> </span
+                    ><span class="glowing-name-span"> I'm Erik Novikov</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    A passionate software engineer crafting digital experiences
+                </p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-intro">
+                <h1 id="about" class="about-title glowing-name-span">
+                    About Me
+                </h1>
+                <div class="about-text">
+                    <p>
+                        Hello there! I'm Erik, a software engineer and fullstack
+                        web developer, currently based in Valencia, Spain. My
+                        passion for problem-solving began in childhood, leading
+                        to victories in chess and physics competitions. This
+                        drive evolved through university, where I honed my
+                        skills in Competitive Programming, participating in
+                        <span class="nowrap">(and winning)</span>
+                        multiple university-level programming contests.
+                    </p>
+                    <p>
+                        After studying software engineering at university, I
+                        continued to expand my expertise by self-learning modern
+                        technologies and applying them, both in personal and
+                        <strong class="highlight"><i> professional </i></strong>
+                        settings. I can say that becoming a software engineer
+                        has been one of the best decisions I've ever made, since
+                        it has allowed me to work on things I love: solving
+                        complex challenges, learning and improving continuously,
+                        delivering impactful solutions, and becoming a better
+                        person.
+                    </p>
+                </div>
+            </div>
+            <div class="skills-section">
+                <h2 class="skills-title glowing-name-span">My skills</h2>
+                <div class="skills-container">
+                    <div class="skills-grid-container">
+                        <div class="category">
+                            <h3 class="category-header">
+                                Programming Languages
+                            </h3>
+                            <div class="category-content">
+                                <ul class="category-list">
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/gopher.svg"
+                                            alt="Go"
+                                        />
+                                        Go
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/typescript.svg"
+                                            alt="TypeScript"
+                                        />
+                                        TypeScript
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h3 class="category-header">Frontend</h3>
+                            <div class="category-content">
+                                <ul class="category-list">
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/html5.svg"
+                                            alt="HTML5"
+                                        />
+                                        HTML5
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/css3.svg"
+                                            alt="CSS3"
+                                        />
+                                        CSS3
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/javascript.svg"
+                                            alt="JavaScript"
+                                        />
+                                        JavaScript
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/react.svg"
+                                            alt="React"
+                                            class="dimmed"
+                                        />
+                                        React
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/tailwind.svg"
+                                            alt="Tailwind CSS"
+                                        />
+                                        Tailwind CSS
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/vite.svg"
+                                            alt="Vite"
+                                        />
+                                        Vite
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/tanstack.png"
+                                            alt="TanStack"
+                                        />
+                                        TanStack
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/shadcn.svg"
+                                            alt="Shadcn"
+                                        />
+                                        Shadcn
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h3 class="category-header">Backend</h3>
+                            <div class="category-content">
+                                <ul class="category-list">
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/gopher.svg"
+                                            alt="Go"
+                                        />
+                                        Go
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/node.svg"
+                                            alt="Node.js"
+                                        />
+                                        Node.js
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/express.svg"
+                                            alt="Express"
+                                        />
+                                        Express
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/nest.svg"
+                                            alt="Nest"
+                                        />
+                                        Nest
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/drizzle.svg"
+                                            alt="DrizzleORM"
+                                        />
+                                        DrizzleORM
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h3 class="category-header">Databases</h3>
+                            <div class="category-content">
+                                <ul class="category-list">
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/postgres.svg"
+                                            alt="PostgreSQL"
+                                        />
+                                        PostgreSQL
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/mysql.svg"
+                                            alt="MySQL"
+                                        />
+                                        MySQL
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/mongodb.svg"
+                                            alt="MongoDB"
+                                        />
+                                        MongoDB
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/redis.svg"
+                                            alt="Redis"
+                                        />
+                                        Redis
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h3 class="category-header">Other</h3>
+                            <div class="category-content">
+                                <ul>
+                                    <li><span style="font-weight: 700;">Version Control and CI/CD</span>: Git,
+                                            Github, Gitlab</li>    
+                                        
+                                    </li>
+                                    <li class="other-item">
+                                        <span class="other-label"
+                                            >Containerization:</span
+                                        >
+                                        <div class="other-icons">
+                                            <img
+                                                src="/public/docker.svg"
+                                                alt="Docker"
+                                            />
+                                        </div>
+                                    </li>
+                                    <li class="other-item has-description">
+                                        <span class="other-label"
+                                            >Cloud Technologies:</span
+                                        >
+                                        <p class="other-description">
+                                            Experience in design and development
+                                            of highly performant, scalable and
+                                            cost-effective cloud solutions with
+                                            AWS (including key services like
+                                            EC2, S3, Lambda Functions, SQS, RDS,
+                                            etc).
+                                        </p>
+                                    </li>
+                                    <li class="other-item has-description">
+                                        <span class="other-label"
+                                            >Development methodologies:</span
+                                        >
+                                        <p class="other-description">
+                                            Experience with Agile (Scrum),
+                                            Test-Driven Development (TDD), and
+                                            familiarity in traditional ones
+                                            (Waterfall).
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h3 class="category-header">Soft Skills</h3>
+                            <div class="category-content">
+                                <ul class="other-list">
+                                    <li class="other-item has-description">
+                                        <p class="other-description">
+                                            Effective communicator in both
+                                            <strong>English</strong>
+                                            (professional) and
+                                            <strong>Spanish</strong> (native).
+                                        </p>
+                                    </li>
+                                    <li class="other-item has-description">
+                                        <p class="other-description">
+                                            Proven experience collaborating in a
+                                            multi-national team.
+                                        </p>
+                                    </li>
+                                    <li class="other-item has-description">
+                                        <p class="other-description">
+                                            Strong work ethic, self-motivated,
+                                            able to work independently, can
+                                            adapt with ease to fast-paced
+                                            environments.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/public/vidder2.jpg" alt="Project 1" />
+                        </div>
+                        <h3>Project Title 1</h3>
+                        <p>
+                            Description of project, what technologies used, and
+                            impact.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Live</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/public/vidder2.jpg" alt="Project 2" />
+                        </div>
+                        <h3>Project Title 2</h3>
+                        <p>Another project description.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Live</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/public/vidder2.jpg" alt="Project 3" />
+                        </div>
+                        <h3>Project Title 3</h3>
+                        <p>Yet another project.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Live</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-content">
+                    <p>
+                        I'm always open to discussing new opportunities and
+                        interesting projects.
+                    </p>
+                    <div class="contact-links">
+                        <a
+                            href="mailto:your.email@example.com"
+                            class="contact-link"
+                        >
+                            <img src="/public/gmail.svg" alt="Email" />
+                            Email
+                        </a>
+                        <a href="https://github.com/E-nkv" class="contact-link">
+                            <img src="/public/github.svg" alt="GitHub" />
+                            GitHub
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/yourprofile"
+                            class="contact-link"
+                        >
+                            <img
+                                src="/public/external-link.svg"
+                                alt="LinkedIn"
+                            />
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025-2026 Erik Novikov. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
