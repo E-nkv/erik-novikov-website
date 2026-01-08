@@ -1,7 +1,76 @@
-/* Google Fonts - Inter (variable weight) */
+/* ============================================================================
+   CSS PALETTE (Design Tokens)
+   ============================================================================ */
+
+:root {
+    /* Brand Colors */
+    --color-primary: #00d4ff;
+    --color-secondary: #ff6b6b;
+    --color-white: #ffffff;
+    --color-text-muted: #cccccc;
+    --color-text-gray: #d1d5db;
+    --color-text-light: #fffff3;
+    
+    /* Background Colors */
+    --color-bg-dark: rgba(1, 20, 36, 0.9);
+    --color-bg-card: rgba(17, 24, 39, 0.8);
+    --color-bg-button: #020421;
+    --color-bg-button-hover: #010212;
+    
+    /* Shadow Colors */
+    --color-shadow-blue: rgba(15, 52, 96, 1);
+    --color-shadow-blue-light: rgba(15, 52, 96, 0.8);
+    --color-shadow-blue-lighter: rgba(15, 52, 96, 0.6);
+    
+    /* Spacing Scale */
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;    /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+    
+    /* Border Radius Scale */
+    --radius-sm: 0.375rem;   /* 6px */
+    --radius-md: 0.625rem;   /* 10px */
+    --radius-lg: 0.75rem;     /* 12px */
+    --radius-xl: 1.2rem;     /* 20px */
+    --radius-full: 50px;
+    
+    /* Typography Scale */
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Outfit', system-ui, sans-serif;
+    
+    /* Shadow Presets */
+    --shadow-card:
+        0 0.75rem 1.875rem 0.5rem var(--color-shadow-blue),
+        0 0.375rem 0.625rem 0.25rem var(--color-shadow-blue-light),
+        0 0.1875rem 0.3125rem 0.125rem var(--color-shadow-blue-lighter);
+    --shadow-card-hover:
+        0 1.5625rem 4.375rem 1.25rem var(--color-shadow-blue),
+        0 0.9375rem 1.875rem 0.75rem var(--color-shadow-blue-light),
+        0 0.5rem 0.9375rem 0.375rem var(--color-shadow-blue-lighter);
+    --shadow-category:
+        0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.3),
+        0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.2);
+    --shadow-category-hover:
+        0 1.5625rem 1.875rem -0.3125rem rgba(0, 212, 255, 0.2),
+        0 0.9375rem 0.9375rem -0.3125rem rgba(0, 0, 0, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+
+/* ============================================================================
+   GOOGLE FONTS
+   ============================================================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Google Fonts - Outfit for headers (variable weight) */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap');
 
 /* Reset and Base Styles */
