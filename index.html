@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Erik Novikov - Software Engineer Portfolio</title>
+        <title>Erik Novikov</title>
         <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="styles.css" />
     </head>
@@ -11,54 +11,58 @@
         <canvas id="particles"></canvas>
         <div id="spotlight"></div>
 
-        <section id="hero" class="hero">
+        <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="static-gradient-span"
-                        >Hi!<span class="wave">👋</span> </span
-                    ><span class="glowing-name-span"> I'm Erik Novikov</span>
+                <h1 id="hero" class="hero-title">
+                    <span class="static-gradient-span">Hi!<span
+                            class="wave">👋</span> </span><span
+                        class="glowing-name-span"> I'm <span
+                            style="text-wrap-mode: nowrap;">Erik
+                            Novikov</span></span>
                 </h1>
 
                 <p class="hero-subtitle">
-                    A passionate software engineer crafting digital experiences
+                    A passionate software developer crafting digital experiences
                 </p>
-                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#about" class="cta-button">About me</a>
             </div>
             <div class="hero-bg"></div>
         </section>
 
-        <section id="about" class="about">
+        <section class="about">
             <div class="about-intro">
                 <h1 id="about" class="about-title glowing-name-span">
                     About Me
                 </h1>
                 <div class="about-text">
                     <p>
-                        Hello there! I'm Erik, a software engineer and fullstack
-                        web developer, currently based in Valencia, Spain. My
-                        passion for problem-solving began in childhood, leading
-                        to victories in chess and physics competitions. This
-                        drive evolved through university, where I honed my
-                        skills in Competitive Programming, participating in
-                        <span class="nowrap">(and winning)</span>
-                        multiple university-level programming contests.
+                        Hello there! I'm Erik, a fullstack software developer
+                        currently based in Valencia, Spain. My passion for
+                        problem-solving began in childhood, leading to victories
+                        in chess and physics competitions. This drive evolved
+                        through university, where I honed my skills in
+                        Competitive Programming, participating in—and
+                        winning—multiple university-level programming contests.
                     </p>
                     <p>
                         After studying software engineering at university, I
                         continued to expand my expertise by self-learning modern
-                        technologies and applying them, both in personal and
-                        <strong class="highlight"><i> professional </i></strong>
-                        settings. I can say that becoming a software engineer
-                        has been one of the best decisions I've ever made, since
-                        it has allowed me to work on things I love: solving
-                        complex challenges, learning and improving continuously,
-                        delivering impactful solutions, and becoming a better
-                        person.
+                        technologies and applying them in both personal and
+                        <strong class="highlight"><i>professional</i></strong>
+                        settings. Becoming a software developer has been one of
+                        the best decisions I've ever made, as it has allowed me
+                        to work on things I love: solving complex challenges,
+                        learning and improving continuously, delivering
+                        impactful solutions, and becoming a better person.
                     </p>
                 </div>
             </div>
+        </section>
+
+        <section class="skills">
             <div class="skills-section">
-                <h2 class="skills-title glowing-name-span">My skills</h2>
+                <h2 id="skills" class="skills-title glowing-name-span">My
+                    Skills</h2>
                 <div class="skills-container">
                     <div class="skills-grid-container">
                         <div class="category">
@@ -70,16 +74,14 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/gopher.svg"
-                                            alt="Go"
-                                        />
+                                            alt="Go" />
                                         Go
                                     </li>
                                     <li class="skill-item">
                                         <img
-                                            src="/public/typescript.svg"
-                                            alt="TypeScript"
-                                        />
-                                        TypeScript
+                                            src="/public/javascript.svg"
+                                            alt="JavaScript" />
+                                        JavaScript
                                     </li>
                                 </ul>
                             </div>
@@ -91,51 +93,50 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/html5.svg"
-                                            alt="HTML5"
-                                        />
+                                            alt="HTML5" />
                                         HTML5
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/css3.svg"
-                                            alt="CSS3"
-                                        />
+                                            alt="CSS3" />
                                         CSS3
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/javascript.svg"
-                                            alt="JavaScript"
-                                        />
+                                            alt="JavaScript" />
                                         JavaScript
+                                    </li>
+                                    <li class="skill-item">
+                                        <img
+                                            src="/public/typescript.svg"
+                                            alt="TypeScript" />
+                                        TypeScript
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/react.svg"
                                             alt="React"
-                                            class="dimmed"
-                                        />
+                                            class="dimmed" />
                                         React
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/tailwind.svg"
-                                            alt="Tailwind CSS"
-                                        />
+                                            alt="Tailwind CSS" />
                                         Tailwind CSS
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/vite.svg"
-                                            alt="Vite"
-                                        />
+                                            alt="Vite" />
                                         Vite
-                                    </li>                                    
+                                    </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/shadcn.svg"
-                                            alt="Shadcn"
-                                        />
+                                            alt="Shadcn" />
                                         Shadcn
                                     </li>
                                 </ul>
@@ -148,32 +149,27 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/gopher.svg"
-                                            alt="Go"
-                                        />
+                                            alt="Go" />
                                         Go
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/node.svg"
-                                            alt="Node.js"
-                                        />
+                                            alt="Node.js" />
                                         Node.js
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/express.svg"
-                                            alt="Express"
-                                        />
+                                            alt="Express" />
                                         Express
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/nest.svg"
-                                            alt="Nest"
-                                        />
+                                            alt="Nest" />
                                         Nest
                                     </li>
-                                
                                 </ul>
                             </div>
                         </div>
@@ -184,29 +180,25 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/postgres.svg"
-                                            alt="PostgreSQL"
-                                        />
+                                            alt="PostgreSQL" />
                                         PostgreSQL
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/mysql.svg"
-                                            alt="MySQL"
-                                        />
+                                            alt="MySQL" />
                                         MySQL
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/mongodb.svg"
-                                            alt="MongoDB"
-                                        />
+                                            alt="MongoDB" />
                                         MongoDB
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/redis.svg"
-                                            alt="Redis"
-                                        />
+                                            alt="Redis" />
                                         Redis
                                     </li>
                                 </ul>
@@ -216,12 +208,35 @@
                             <h3 class="category-header">Other</h3>
                             <div class="category-content">
                                 <ul>
-                                    <li><span style="font-weight: 700;">Version Control and CI/CD</span>: Git, GitHub, GitLab</li>
-                                    <li><span style="font-weight: 700;">Containerization and Orchestration</span>: Docker & Kubernetes</li>
-                                    <li><span style="font-weight: 700;">Cloud Technologies</span>: Experience in the design, development and deployment of robust, performant and cost-effective cloud solutions with Cloudflare and AWS.</li>
-                                    <li><span style="font-weight: 700;">Development methodologies</span>: Experience with Agile (Scrum), Test-Driven Development (TDD), and familiarity in traditional ones (Waterfall).</li>
-                                    <li><span style="font-weight: 700;">AI Fluency</span>: Competent in the usage of AI for increased productivity and software <strong> quality </strong> 
-
+                                    <li><span style="font-weight: 700;">Version
+                                            Control and CI/CD</span>: Git,
+                                        GitHub, GitLab.</li>
+                                    <li>Competent in <strong>Linux</strong>,
+                                        <strong>Computer Networking</strong>,
+                                        and <strong>System Design</strong>.</li>
+                                    <li><span
+                                            style="font-weight: 700;">Containerization
+                                            and Orchestration</span>: Docker &
+                                        Kubernetes.</li>
+                                    <li><span style="font-weight: 700;">Cloud
+                                            Technologies</span>: Experience in
+                                        the design, development, and deployment
+                                        of robust, performant, and
+                                        cost-effective cloud solutions with
+                                        Cloudflare and AWS.</li>
+                                    <li><span
+                                            style="font-weight: 700;">Development
+                                            Methodologies</span>: Experience
+                                        with Agile (Scrum), Test-Driven
+                                        Development (TDD), and familiarity with
+                                        traditional ones (Waterfall).</li>
+                                    <li><span style="font-weight: 700;">AI
+                                            Fluency</span>: Competent in the
+                                        usage of AI for increased productivity
+                                        and software
+                                        <strong>quality</strong>.</li>
+                                    <li>Practical and theoretical knowledge in
+                                        <strong>IT Support</strong>.</li>
                                 </ul>
                             </div>
                         </div>
@@ -229,10 +244,18 @@
                             <h3 class="category-header">Soft Skills</h3>
                             <div class="category-content">
                                 <ul>
-                                    <li>Effective communicator in <strong>English</strong> (professional), <strong>Spanish</strong> (native) and<strong> Russian </strong>  (conversational).</li>
-                                    <li>Proven experience collaborating with a cross-role and multinational team.</li>
-                                    <li>Strong work ethic, self-motivated, able to work independently, can adapt with ease to fast-paced environments.</li>
-                                    <li>Quick learner, with strong core problem-solving skills </li>
+                                    <li>Effective communicator in
+                                        <strong>English</strong> (professional),
+                                        <strong>Spanish</strong> (native) and
+                                        <strong>Russian</strong>
+                                        (conversational).</li>
+                                    <li>Proven experience collaborating with a
+                                        cross-role and multinational team.</li>
+                                    <li>Strong work ethic, self-motivated, able
+                                        to work independently, can adapt with
+                                        ease to fast-paced environments.</li>
+                                    <li>Quick learner, with strong
+                                        problem-solving skills.</li>
                                 </ul>
                             </div>
                         </div>
@@ -243,87 +266,105 @@
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>Featured Projects</h2>
+                <h2 class="gradient-header">What I've done</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="/public/vidder2.jpg" alt="Project 1" />
+                            <img src="/public/vidder2.jpg" alt="Vidder CLI" />
                         </div>
-                        <h3>Project Title 1</h3>
+                        <h3>VIDDER CLI</h3>
                         <p>
-                            Description of project, what technologies used, and
-                            impact.
+                            A simple and easy to use CLI application to
+                            facilitate downloading content (video or audio) from
+                            over 100 platforms, including youtube videos and
+                            instagram reels.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Live</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <a href="https://github.com/E-nkv/vidder"
+                                class="project-link">View on GitHub</a>
                         </div>
                     </div>
                     <div class="project-card">
                         <div class="project-image">
+                            <img src="/public/devto.png" alt="Project 2" />
+                        </div>
+                        <h3>Technical Writing</h3>
+                        <p>
+                            I write about technical topics on <a
+                                href="https://dev.to/eriknovikov">dev.to</a>,
+                            including software development, AI, Linux, productivity, and more.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://dev.to/eriknovikov"
+                                class="project-link">View blog</a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="project-card">
+                        <div class="project-image">
                             <img src="/public/vidder2.jpg" alt="Project 2" />
                         </div>
-                        <h3>Project Title 2</h3>
-                        <p>Another project description.</p>
+                        <h3>Dotapro</h3>
+                        <p>An open source platform for professional dota2 on AWS. In progress 🙂</p>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Live</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <a href="https://github.com/E-nkv/dotapro" class="project-link">View on GitHub</a>
                         </div>
                     </div>
                     <div class="project-card">
                         <div class="project-image">
                             <img src="/public/vidder2.jpg" alt="Project 3" />
                         </div>
-                        <h3>Project Title 3</h3>
-                        <p>Yet another project.</p>
+                        <h3>Connect 3X</h3>
+                        <p>A real time multiplayer game (Connect Four, in 3D) on AWS. In progress 🙂</p>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Live</a>
+                            <a href="#" class="project-link">Live App</a>
                             <a href="#" class="project-link">GitHub</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
+                <p style="text-align: center; margin-top: 50px; font-size: small; color: #fffff3;">
+                    <strong>**PD:</strong> The list only includes personal or
+                    shareable projects of mine. Super cool projects are coming 😁</p>
             </div>
+
         </section>
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>Get In Touch</h2>
+                <h2 class="gradient-header">Get In Touch</h2>
                 <div class="contact-content">
                     <p>
                         I'm always open to discussing new opportunities and
-                        interesting projects.
+                        talking about tech in general. I'm quite friendly, so
+                        don't be shy 🤓
                     </p>
                     <div class="contact-links">
                         <a
-                            href="mailto:your.email@example.com"
-                            class="contact-link"
-                        >
-                            <img src="/public/gmail.svg" alt="Email" />
+                            href='mailto:Hey@eriknkv24@gmail.com'
+                            class="contact-link">
                             Email
+                            <img src="/public/gmail.svg" alt="Email" />
                         </a>
                         <a href="https://github.com/E-nkv" class="contact-link">
-                            <img src="/public/github.svg" alt="GitHub" />
                             GitHub
+                            <img src="/public/github.svg" alt="GitHub" />
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/yourprofile"
-                            class="contact-link"
-                        >
-                            <img
-                                src="/public/external-link.svg"
-                                alt="LinkedIn"
-                            />
+                            href="https://www.linkedin.com/in/eriknovikov"
+                            class="contact-link">
                             LinkedIn
+                            <img
+                                src="/public/linkedin.svg"
+                                alt="LinkedIn" />
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2025-2026 Erik Novikov. All rights reserved.</p>
+        <footer style="width: 100%; text-align: center;">
+            <p style="color: #ffffff53;">&copy; 2025-2026 Erik Novikov. All rights reserved.</p>
         </footer>
-
-        <script src="script.js"></script>
     </body>
+    <script src="script.js"></script>
 </html>

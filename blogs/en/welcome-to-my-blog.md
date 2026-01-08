@@ -1,51 +1,28 @@
----
-title: Welcome to my blog ✌️
-canonicalId: welcome-to-my-blog
-lang: en
-slug: welcome-to-my-blog
-date: 2025-09-01
-publish_date: 2025-09-01
-hook: First time here? Read this blog first and don't miss out on one of the best tech blogs you will ever come across...
-recommended:
-  - ultimate-developer-guide-2025
----
+First of all.. WELCOME ! 🤓
 
 ## What is this blog about?
+Throughout this blog I intend on writing about tech - fullstack web-dev, programming, career advice, linux, cloud computing, AI, and software development in general. Occasionally I may write about other topics I find interesting, only if I'm absolutely sure it would be of help to you somehow. 
 
-Throughout this blog I intend on writing about tech - all branches of development, focusing on programming, web-dev, career advice, AI, tips and tricks from my experience in the tech market, and occasionally I may blog about other topics I find interesting which I believe that would help you somehow. 
+## A bit about me
 
-## Who am I 🤔?
-
-Hey there! I'm Erik, a fullstack software developer (though I prefer thinking of myself as a passionate problem-solver and learner instead 😅). I started programming at 17 years old, went to university (Software Engineering), and I have been professionally in the industry for a bit over 2 years now. It has been (and still is) an exciting ride, where I have had to learn A LOT, and the best thing: I will always be learning. In my opinion, that is the best thing about tech - it evolves all the time, and I find keeping up with the changes real fun (a bit nerdy of me, I admit 🤓). And yes, the "whoami" was pun-intended. If you haven't seen it, do yourself a favor and watch [Whoami](https://www.google.com/search?q=whoami+movie&oq=whoami+movie).
+Hey there! I'm Erik, a fullstack software dev. I started programming with 17 years old, went to university (Software Engineering), and after that I have been professionally in the industry for a bit over 2 years now. It's been an exciting ride, where I've had to learn A LOT, and will continue to do so. imo, that's the best thing about tech - it evolves all the time. Other than doing "normal dev stuff", I'm currently sharpening my cloud-computing (mostly AWS), 3D development, and AI skills. In my free time, you will find me building some cool software, doing sports, and sometimes playing a Dota2 match 🤓.
 
 ## Why this blog?
 
-When I started immersing myself into this new world of tech, I found a lot of good and bad resources, most of which were blogs. Lots of them were extremely useless, or sometimes maybe somewhat accurate from a theoretical perspective but lacked the practical touch. I wanted not only to know the key concepts of the technology, but I also wanted to know how is it that I should apply it, best practices and so on - and in my opinion, finding something like this was (and is) very difficult. Sometimes I felt extremely frustrated and even depressed, not knowing where and how to learn stuff (especially since all tech influencers are saying different things). Whenever I would start learning via some book, course, YouTube video or blog, something deep down always asked me: "Are you sure this is the best way to use your time when trying to learn this topic?". And the true answer always was - **"I don't know, probably not"**. And it's obvious: how are you supposed to know if you have neither the knowledge nor the experience? Well, that brings us to why I started this blog:
+When I started immersing into tech, I found a lot of good and bad resources. Lots of them were completely useless, despite most being "correct" from a technical standpoint. Sometimes I felt extremely frustrated, not knowing where and how to learn stuff (let alone that tech influencers only confuse you even more). Whenever I would start learning via some book, course, YouTube video or blog, something deep down always asked me: "Are you sure this is the best way to use your time when trying to learn this topic?". And the true answer always was - **"I don't know, probably not"**. And it's obvious: how are you supposed to know if you have neither the knowledge nor the experience? Well, that brings us to why I started this blog:
 
 1. It would be great if I could help you save at least a bit of all that time, effort and frustration in tech.
-2. Writing about tech topics gives me a deeper understanding of them. It's Feynman's principle - in order to truly grasp something, you must be able to teach it well, or else you don't truly understand it.
-3. I just enjoy it 🙂
+2. Writing about tech topics gives me a deeper understanding of them. It's Feynman's principle - to truly grasp something, I gotta be able to teach it well (or at least condense it's essence into simple words), or else I don't truly understand it.
+3. **I just enjoy it 🙂**
 
 ## About my writing style
 
-I think it will be useful for you to know about how I write my blogs:
+- **I don't like fluff**. 
+- **I keep it casual**. I genuienly believe that day to day language helps you learn the concepts much better, even at the price of being "slighly unaccurate from a technical perspective"
+- **It is value driven**. I only post something if I believe it will be of GREAT VALUE to you, else I won't upload it. Just because it's free for you to consume, it doesn't mean I am allowed to post shitty content (this would make me a "shitty blogger", which I'm not 😅)
 
-- **They are value-driven**: Just because it's free, it doesn't mean (at least to me) that I am allowed to post a shitty blog. Not only should it have value, but it should have GREAT VALUE to you, or else I won't be uploading it, period. 
+- **I won't use AI to write**: Yes, you heard it right. While I do use them to double check stuff like punctuation and spacing, I promise I won't be giving you the typical "AI-response-smelling-blog", which feels dry and AI-stenchy. That would neither satisfy me, nor help me to "trully grasp" what I'm writing about. Besides, I genuenly enjoy writing. It's like meditating, but with ones and zeros 🤓.
 
-- **I don't use AI to write them**: Yes, you heard (or read 🤔) right. While I do use them to make sure I don't make any typos or punctuation errors, I try to write everything by myself. The reasons for this are: 
-    - I believe that LLM-generated content is dry, even with fine-tuning. We have all seen some blogs or articles that have that stenchy GPT smell 🤢.
-    - It would feel like cheating, since it wouldn't really be my blog, would it? It would probably be something more like "GPT-4's blog", or "Google Gemini's blog" instead of Erik's Blog. 
-    - As I said before - I genuinely enjoy writing. It's like meditating, but with ones and zeros 🤓. 
+## Wanna chat a bit? 
 
-- **I try to be as concise as I possibly can while still retaining context and my personality throughout the blog** 
-
-    I have seen both extremes: 
-    1. Resources that are super short and dry, that are technically as summarized as possible, but you still can't get a grasp on them since they lack that "author's touch" and "context" in order for the knowledge to be properly cemented into your brain, and 
-    2. Resources that are awfully long and boring, that make you sleepy rather than excited about tech. (YES I'M TALKING TO YOU, UNIVERSITY BOOKS 😡). 
-So, I try to strike the perfect balance - call it Yin Yang if you will ☯️.
-
-- **I write them in English first, then translate them to Spanish**: The English blogs will always (in my opinion) be better than the Spanish ones, since they convey what I'm trying to express much better. I do make sure that the AI-generated translations into Spanish are correct, but they don't feel as natural as the English ones. So in general, read the Spanish versions only if you really don't know English (which I super duper strongly recommend you learn ASAP if you're in tech).
-
-## Have a question? Or just want to talk? 
-
-You can contact me [here](/#contact). I'm quite friendly, so don't be shy 🤓.
+Feel free to **contact me [here](https://eriknovikov.pages.dev/#contact)**. I'm quite friendly, so don't be shy 🤓.
