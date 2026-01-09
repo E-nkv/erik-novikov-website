@@ -45,7 +45,7 @@ const skillItems = document.querySelectorAll('.skill-item');
 skillItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
         const randomColor = GLOW_COLORS[Math.floor(Math.random() * GLOW_COLORS.length)];
-        item.style.boxShadow = `0 0 20px ${randomColor}`;
+        item.style.boxShadow = `0 0 7px ${randomColor}`;
     });
 
     item.addEventListener('mouseleave', () => {
@@ -116,7 +116,7 @@ function getParticleConfig() {
     if (screenWidth < 768) {
         // Mobile
         return {
-            count: 50,
+            count: 30,
             connectionDistance: 100,
             mouseDistance: 100,
             mouseForce: 0.3,
@@ -128,7 +128,7 @@ function getParticleConfig() {
     } else if (screenWidth < 1024) {
         // Tablet
         return {
-            count: 80,
+            count: 50,
             connectionDistance: 120,
             mouseDistance: 70,
             mouseForce: 0.4,
@@ -140,7 +140,7 @@ function getParticleConfig() {
     } else {
         // Desktop
         return {
-            count: 100,
+            count: 80,
             connectionDistance: 140,
             mouseDistance: 150,
             mouseForce: 0.5,
@@ -329,3 +329,6 @@ document.addEventListener('mousemove', (e) => {
 // Console message for developers
 console.log('%c👋 Hi there! Thanks for checking out my portfolio.', 'color: #00d4ff; font-size: 16px; font-weight: bold;');
 console.log('%cFeel free to explore the code!', 'color: #ff6b6b;');
+
+// To convert devto.png to jpg using ffmpeg, run:
+// ffmpeg -i public/devto.png public/devto.jpg
