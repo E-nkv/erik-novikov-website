@@ -272,7 +272,8 @@ section {
     will-change: opacity, transform;
     contain: layout paint;
     content-visibility: auto;
-    contain-intrinsic-size: 0 1000px;
+    /* Use intrinsic height to prevent blank space when scrolling fast on mobile */
+    contain-intrinsic-size: auto 100vh;
 }
 
 section.visible {

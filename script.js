@@ -77,19 +77,6 @@ window.addEventListener('load', () => {
     }
 });
 
-// Parallax
-const PARA_SPEED = 0.5;
-const heroBg = document.querySelector('.hero-bg');
-
-window.addEventListener('scroll', () => {
-    if (heroBg) {
-        const scrolled = window.pageYOffset;
-        heroBg.style.transform = `translateY(${scrolled * PARA_SPEED}px)`;
-    }
-});
-
-
-
 // Block right-click
 document.addEventListener('contextmenu', e => e.preventDefault());
 
@@ -108,6 +95,7 @@ let minSize = 1;
 let maxSize = 3;
 let speed = 1;
 let animationFrameId = null;
+let isTabVisible = true;
 
 // Config by screen size
 function getParticleConfig() {
@@ -279,15 +267,17 @@ function initParticles() {
     }
 }
 
-// Draw connections between particles
+// Draw connections between particles (optimized - reduces calculations)
 function drawConnections() {
     for (let i = 0; i < particles.length; i++) {
+        // Only check particles ahead in array to avoid duplicate checks
         for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < connectionDistance) {
+            const distSquared = dx * dx + dy * dy; // Use squared distance to avoid Math.sqrt when possible
+            
+            if (distSquared < connectionDistance * connectionDistance) {
+                const distance = Math.sqrt(distSquared);
                 const opacity = 1 - (distance / connectionDistance);
                 ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * connectionOpacity})`;
                 ctx.lineWidth = 1;
@@ -302,13 +292,19 @@ function drawConnections() {
 
 // Animation loop
 function animateParticles() {
+    if (!isTabVisible) {
+        // Pause animation when tab is not visible
+        animationFrameId = requestAnimationFrame(animateParticles);
+        return;
+    }
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    
     for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
     }
-
+    
     drawConnections();
     animationFrameId = requestAnimationFrame(animateParticles);
 }
@@ -324,7 +320,7 @@ document.addEventListener('mousemove', (e) => {
     const y = (e.clientY / window.innerHeight) * 100;
     spotlight.style.setProperty('--x', `${x}%`);
     spotlight.style.setProperty('--y', `${y}%`);
-});
+}, { passive: true }); // Use passive event listener for better scroll performance
 
 // Console message for developers
 console.log('%c👋 Hi there! Thanks for checking out my portfolio.', 'color: #00d4ff; font-size: 16px; font-weight: bold;');
