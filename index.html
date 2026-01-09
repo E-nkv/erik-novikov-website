@@ -4,6 +4,26 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
+        <!-- Performance: Preconnect to font origins -->
+        <link rel="preconnect" href="/" />
+        
+        <!-- Performance: Preload critical resources -->
+        <link rel="preload" href="styles.css" as="style" />
+        <link rel="preload" href="script.js" as="script" />
+        
+        <!-- Security: Content Security Policy -->
+        <!-- Note: Some CSP directives like frame-ancestors, COOP, COEP, HSTS, and X-Frame-Options require HTTP headers -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: moz-extension: chrome-extension:; connect-src 'self' https://eriknovikov.pages.dev https://dev.to https://github.com https://www.linkedin.com;" />
+        
+        <!-- Security: X-Content-Type-Options -->
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        
+        <!-- Security: Referrer Policy -->
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        
+        <!-- Performance: Cache Control -->
+        <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
+        
         <!-- Primary Meta Tags -->
         <title>Erik Novikov - Software Developer</title>
         <meta name="title" content="Erik Novikov - Software Developer" />
@@ -132,13 +152,17 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/gopher.svg"
-                                            alt="Go" />
+                                            alt="Go"
+                                            width="20"
+                                            height="20" />
                                         Go
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/javascript.svg"
-                                            alt="JavaScript" />
+                                            alt="JavaScript"
+                                            width="20"
+                                            height="20" />
                                         JavaScript
                                     </li>
                                 </ul>
@@ -151,50 +175,66 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/html5.svg"
-                                            alt="HTML5" />
+                                            alt="HTML5"
+                                            width="20"
+                                            height="20" />
                                         HTML5
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/css3.svg"
-                                            alt="CSS3" />
+                                            alt="CSS3"
+                                            width="20"
+                                            height="20" />
                                         CSS3
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/javascript.svg"
-                                            alt="JavaScript" />
+                                            alt="JavaScript"
+                                            width="20"
+                                            height="20" />
                                         JavaScript
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/typescript.svg"
-                                            alt="TypeScript" />
+                                            alt="TypeScript"
+                                            width="20"
+                                            height="20" />
                                         TypeScript
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/react.svg"
                                             alt="React"
-                                            class="dimmed" />
+                                            class="dimmed"
+                                            width="20"
+                                            height="20" />
                                         React
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/tailwind.svg"
-                                            alt="Tailwind CSS" />
+                                            alt="Tailwind CSS"
+                                            width="20"
+                                            height="20" />
                                         Tailwind CSS
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/vite.svg"
-                                            alt="Vite" />
+                                            alt="Vite"
+                                            width="20"
+                                            height="20" />
                                         Vite
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/shadcn.svg"
-                                            alt="Shadcn" />
+                                            alt="Shadcn"
+                                            width="20"
+                                            height="20" />
                                         Shadcn
                                     </li>
                                 </ul>
@@ -207,25 +247,33 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/gopher.svg"
-                                            alt="Go" />
+                                            alt="Go"
+                                            width="20"
+                                            height="20" />
                                         Go
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/node.svg"
-                                            alt="Node.js" />
+                                            alt="Node.js"
+                                            width="20"
+                                            height="20" />
                                         Node.js
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/express.svg"
-                                            alt="Express" />
+                                            alt="Express"
+                                            width="20"
+                                            height="20" />
                                         Express
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/nest.svg"
-                                            alt="Nest" />
+                                            alt="Nest"
+                                            width="20"
+                                            height="20" />
                                         Nest
                                     </li>
                                 </ul>
@@ -238,25 +286,33 @@
                                     <li class="skill-item">
                                         <img
                                             src="/public/postgres.svg"
-                                            alt="PostgreSQL" />
+                                            alt="PostgreSQL"
+                                            width="20"
+                                            height="20" />
                                         PostgreSQL
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/mysql.svg"
-                                            alt="MySQL" />
+                                            alt="MySQL"
+                                            width="20"
+                                            height="20" />
                                         MySQL
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/mongodb.svg"
-                                            alt="MongoDB" />
+                                            alt="MongoDB"
+                                            width="20"
+                                            height="20" />
                                         MongoDB
                                     </li>
                                     <li class="skill-item">
                                         <img
                                             src="/public/redis.svg"
-                                            alt="Redis" />
+                                            alt="Redis"
+                                            width="20"
+                                            height="20" />
                                         Redis
                                     </li>
                                 </ul>
@@ -328,7 +384,7 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="/public/vidder2.jpg" alt="Vidder CLI" />
+                            <img src="/public/vidder2.jpg" alt="Vidder CLI" width="450" height="200" loading="lazy" />
                         </div>
                         <h3>VIDDER CLI</h3>
                         <p>
@@ -344,7 +400,7 @@
                     </div>
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="/public/devto.jpg" alt="Project 2" />
+                            <img src="/public/devto.jpg" alt="Technical Writing blog preview" width="450" height="200" loading="lazy" />
                         </div>
                         <h3>Technical Writing</h3>
                         <p>
@@ -401,11 +457,11 @@
                             href='mailto:Hey@eriknkv24@gmail.com'
                             class="contact-link">
                             Email
-                            <img src="/public/gmail.svg" alt="Email" />
+                            <img src="/public/gmail.svg" alt="Email" width="24" height="24" />
                         </a>
                         <a href="https://github.com/E-nkv" class="contact-link">
                             GitHub
-                            <img src="/public/github.svg" alt="GitHub" />
+                            <img src="/public/github.svg" alt="GitHub" width="24" height="24" />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/eriknovikov"
@@ -413,7 +469,9 @@
                             LinkedIn
                             <img
                                 src="/public/linkedin.svg"
-                                alt="LinkedIn" />
+                                alt="LinkedIn"
+                                width="24"
+                                height="24" />
                         </a>
                     </div>
                 </div>
@@ -424,5 +482,5 @@
             <p style="color: #ffffff53;">&copy; 2025-2026 Erik Novikov. All rights reserved.</p>
         </footer>
     </body>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </html>
