@@ -1,0 +1,24 @@
+{
+  "name": "Erik Novikov - Fullstack Software Developer",
+  "short_name": "Erik Novikov",
+  "description": "Erik Novikov, software developer, fullstack developer, Valencia developer, Spain developer, web development, backend, frontend developer, AWS developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#00d4ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/public/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/public/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
