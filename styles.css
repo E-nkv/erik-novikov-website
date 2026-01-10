@@ -123,6 +123,7 @@ body {
     min-height: 100vh;
     /* Prevent scrollbar flicker */
     scrollbar-gutter: stable;
+    padding: 0 12px 0 12px;
 }
 
 h1, h2, h3 {
@@ -199,15 +200,11 @@ p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: glow 2s ease-in-out infinite alternate;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
 }
 
-.static-gradient-span {
-    background-color: white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+
 
 .hero-title {
     font-size: 5rem;
@@ -285,7 +282,7 @@ section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3.125rem;
-    color: #00d4ff;
+    color: white;
 }
 
 /* About Section */
@@ -508,6 +505,8 @@ section h2 {
     display: inline-flex;
     align-items: center;
     font-weight: 500;
+    color: var(--color-text-muted);
+    opacity: 0.9;
     padding: 0.25rem 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 0.375rem;
@@ -516,6 +515,7 @@ section h2 {
 
 .skill-item:hover {
     background: rgba(0, 212, 255, 0.2);
+    cursor: default;
 }
 
 .skill-item img {
@@ -740,6 +740,21 @@ img[style*="height"] {
 
     .category-content {
         padding: 1rem;
+    }
+}
+
+/* Very small screens (e.g., 310px devices like Honor phones) */
+@media (max-width: 340px) {
+    body {
+        padding: 0 8px 0 8px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .skill-item {
+        font-size: 0.7rem;
     }
 }
 

@@ -101,38 +101,38 @@ let isTabVisible = true;
 function getParticleConfig() {
     const screenWidth = window.innerWidth;
     
-    if (screenWidth < 768) {
-        // Mobile
+    if (screenWidth < 500) {
+        // Mobile - smaller screens need smaller distances and lower opacity
         return {
-            count: 30,
+            count: 35,
             connectionDistance: 100,
-            mouseDistance: 100,
-            mouseForce: 0.3,
-            connectionOpacity: 0.2,
-            minSize: 1,
+            mouseDistance: 80,
+            mouseForce: 0.2,
+            connectionOpacity: 0.4,
+            minSize: 0.5,
             maxSize: 2,
-            speed: 0.8
+            speed: 0.5
         };
     } else if (screenWidth < 1024) {
-        // Tablet
+        // Tablet - moderate values
         return {
             count: 50,
             connectionDistance: 120,
-            mouseDistance: 70,
-            mouseForce: 0.4,
-            connectionOpacity: 0.25,
+            mouseDistance: 100,
+            mouseForce: 0.3,
+            connectionOpacity: 0.5,
             minSize: 1,
             maxSize: 2.5,
-            speed: 0.9
+            speed: 0.8
         };
     } else {
-        // Desktop
+        // Desktop - larger screens can handle larger distances
         return {
-            count: 80,
-            connectionDistance: 140,
-            mouseDistance: 150,
-            mouseForce: 0.5,
-            connectionOpacity: 0.3,
+            count: 70,
+            connectionDistance: 120,
+            mouseDistance: 180,
+            mouseForce: 0.4,
+            connectionOpacity: 0.6,
             minSize: 1,
             maxSize: 3,
             speed: 1
